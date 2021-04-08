@@ -1,0 +1,37 @@
+<form id="swap" [formGroup]="form">
+  <label swap-textfield standard>
+    <span>CPF</span>
+    <input
+    type="text"
+    swapControl
+    formControlName="standard"
+    swap-mask="DDD.DDD.DDD-DD"
+    />
+    <output>Error</output>
+  </label>
+
+
+  <label swap-textfield outlined>
+    <span>Telefone</span>
+    <input
+    type="text"
+    swapControl
+    formControlName="outlined"
+    swap-mask="(DD) DDDDD-DDDD"
+    />
+    <output>Error</output>
+  </label>
+
+  <label swap-textfield filled>
+    <span>Preço</span>
+    <input type="text" swapControl formControlName="filled" swap-currency />
+    <output>Error</output>
+  </label>
+
+
+</form>
+
+<footer>
+  <button form="swap" swap-button mode="secondary" type="reset">Resetar</button>
+  <button form="swap" swap-button mode="primary">Enviar</button>
+</footer>

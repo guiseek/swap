@@ -260,6 +260,45 @@
           }
         }
       }
+    },
+    "swap-forms": {
+      "projectType": "library",
+      "root": "libs/swap/forms",
+      "sourceRoot": "libs/swap/forms/src",
+      "prefix": "swap",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/swap/forms/tsconfig.lib.json",
+            "project": "libs/swap/forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/swap/forms/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/swap/forms/src/**/*.ts",
+              "libs/swap/forms/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/swap/forms"
+          ],
+          "options": {
+            "jestConfig": "libs/swap/forms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

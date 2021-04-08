@@ -1,0 +1,13 @@
+<form id="swap" [formGroup]="form">
+  <label swap-slider>
+    <span>Label</span>
+    <input type="range" swapControl formControlName="control" />
+  </label>
+</form>
+
+<footer>
+  <button form="swap" swap-button mode="secondary" type="reset">Resetar</button>
+  <button form="swap" swap-button mode="primary">Enviar</button>
+</footer>
+
+<pre>{{ form.value | json }}</pre>

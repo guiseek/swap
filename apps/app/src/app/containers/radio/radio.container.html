@@ -1,0 +1,29 @@
+<form id="swap" [formGroup]="form">
+  <label swap-radio>
+    <span>Label</span>
+    <input
+      type="radio"
+      swapControl
+      formControlName="control"
+      name="control"
+      [value]="1"
+    />
+  </label>
+  <label swap-radio>
+    <span>Label</span>
+    <input
+      type="radio"
+      swapControl
+      formControlName="control"
+      name="control"
+      [value]="2"
+    />
+  </label>
+</form>
+
+<footer>
+  <button form="swap" swap-button mode="secondary" type="reset">Resetar</button>
+  <button form="swap" swap-button mode="primary">Enviar</button>
+</footer>
+
+<pre>{{ form.value | json }}</pre>

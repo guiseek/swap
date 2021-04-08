@@ -1,0 +1,19 @@
+<form id="swap" [formGroup]="form">
+  <label swap-checkbox>
+    <span>Label</span>
+    <input type="checkbox" swapControl formControlName="one" />
+    <output>Error</output>
+  </label>
+  <label swap-checkbox>
+    <span>Label</span>
+    <input type="checkbox" swapControl formControlName="two" />
+    <output>Error</output>
+  </label>
+
+</form>
+
+<footer>
+  <button form="swap" swap-button mode="secondary" type="reset">Resetar</button>
+  <button form="swap" swap-button mode="primary">Enviar</button>
+</footer>
+<pre>{{ form.value | json }}</pre>

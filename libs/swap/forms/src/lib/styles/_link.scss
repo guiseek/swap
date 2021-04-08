@@ -1,0 +1,56 @@
+.swap-link {
+  --seek-helper-safari1: rgba($seek-primary-default-color, 0.12);
+  padding: 3px 0px;
+  border-radius: 4px 4px 0 0;
+  display: inline-flex;
+  text-decoration: none;
+  color: rgba($seek-primary-default-color, 0.8);
+  // background-color: rgba($seek-primary-default-color, 0.1);
+  transition: background-color 0.4s, box-shadow 0.2s, color 0.2s;
+
+  margin: auto;
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    bottom: 0;
+    height: 1px;
+    right: 50%;
+    left: 50%;
+    // right: 1.25rem;
+    // left: 1.25rem;
+    border-radius: 4px;
+    position: absolute;
+    display: inline-flex;
+    background-color: $seek-primary-default-color;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    transform-origin: top center;
+    z-index: -1;
+  }
+
+  /* Hover */
+  &:hover {
+    color: rgba($seek-primary-default-background, 1);
+    // background-color: rgba($seek-primary-default-color, 0.8);
+
+    &:after {
+      right: 0;
+      left: 0;
+      // height: 100%;
+    }
+  }
+
+  /* Focus */
+  &:focus {
+    background-color: var(--seek-helper-safari1);
+    box-shadow: 0 0 0 0.16em var(--seek-helper-safari1);
+    outline: none;
+  }
+
+  /* Active */
+  &:active {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
