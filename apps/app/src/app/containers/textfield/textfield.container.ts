@@ -9,6 +9,9 @@ export class TextfieldContainer {
     filled: ['', [Validators.required]],
     outlined: ['', [Validators.required]],
     standard: ['', [Validators.required]],
+    cpf: ['', [Validators.required]],
+    phone: ['', [Validators.minLength(15)]],
+    price: ['', [Validators.min(0.01)]],
   });
 
   constructor(readonly fb: FormBuilder) {}

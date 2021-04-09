@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@swap/forms": ["libs/swap/forms/src/index.ts"]
+      "@swap/forms": ["libs/swap/forms/src/index.ts"],
+      "@swap/layout": ["libs/swap/layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

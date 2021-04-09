@@ -7,6 +7,8 @@ label[swap-textfield] {
   max-height: 56px;
   margin-bottom: 24px;
 
+  padding-top: 6px;
+
   &[filled]  {
     /* Input, Textarea */
     > input,
@@ -111,7 +113,6 @@ label[swap-textfield] {
   }
 
   &[outlined] {
-    padding-top: 6px;
 
     /* Input, Textarea */
     > input,

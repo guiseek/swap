@@ -1,0 +1,38 @@
+@import '../../../src/styles/variables';
+
+:host {
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.tabs__tab-bar {
+  padding: 0px;
+  align-self: center;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: -12px;
+  z-index: 1000;
+  border: 1px solid $seek-primary-pressed-drop-shadow-color;
+}
+.tabs__tab {
+  background-color: $seek-primary-default-color;
+  color: $seek-primary-default-background;
+  display: inline-block;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.tabs__tab.active {
+  background-color: $seek-primary-default-background;
+  color: $seek-primary-default-color;
+}
+.overlay {
+  background: $seek-primary-default-border;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0.5;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}

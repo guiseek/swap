@@ -25,7 +25,8 @@
     "@nrwl/angular:library": {
       "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true
     },
     "@nrwl/angular:component": {
       "style": "scss"
@@ -295,6 +296,45 @@
           ],
           "options": {
             "jestConfig": "libs/swap/forms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "swap-layout": {
+      "projectType": "library",
+      "root": "libs/swap/layout",
+      "sourceRoot": "libs/swap/layout/src",
+      "prefix": "swap",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/swap/layout/tsconfig.lib.json",
+            "project": "libs/swap/layout/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/swap/layout/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/swap/layout/src/**/*.ts",
+              "libs/swap/layout/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/swap/layout"
+          ],
+          "options": {
+            "jestConfig": "libs/swap/layout/jest.config.js",
             "passWithNoTests": true
           }
         }

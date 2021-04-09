@@ -1,0 +1,19 @@
+<ul class="tabs__tab-bar">
+  <li
+    class="tabs__tab"
+    *ngFor="let tab of tabs"
+    [ngClass]="{'active': tab.active == true}"
+  >
+    <a
+      tabindex="0"
+      (keyup.enter)="selectTab(tab)"
+      (keyup.space)="selectTab(tab)"
+      (click)="selectTab(tab)"
+      role="button"
+      >{{ tab.tabTitle }}</a
+    >
+  </li>
+</ul>
+<ng-content></ng-content>
+
+<div class="overlay" [style.display]="disabled ? 'block' : 'none'"></div>

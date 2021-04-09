@@ -1,0 +1,17 @@
+@import '../../../src/styles/variables';
+
+:host {
+  display: flex;
+  height: 100%;
+}
+
+:host([aria-hidden='true']) {
+  display: none;
+}
+.tabs__panel {
+  background-color: $seek-primary-default-border;
+  width: 100%;
+  box-shadow: inset 0px 0px 0px 1px $seek-primary-pressed-drop-shadow-color;
+  border-radius: 6px;
+  padding: 30px 15px;
+}

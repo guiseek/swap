@@ -20,6 +20,7 @@
     "web-e2e": { "tags": [], "implicitDependencies": ["web"] },
     "app": { "tags": ["type:app"] },
     "app-e2e": { "tags": [], "implicitDependencies": ["app"] },
-    "swap-forms": { "tags": [] }
+    "swap-forms": { "tags": [] },
+    "swap-layout": { "tags": [] }
   }
 }

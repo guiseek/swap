@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { SwapLayoutModule } from '@swap/layout';
 import { SwapFormsModule } from '@swap/forms';
 
 import { AppComponent } from './app.component';
@@ -13,7 +14,7 @@ import {
   CheckboxContainer,
   RadioContainer,
   SliderContainer,
-  SelectContainer
+  SelectContainer,
 } from './containers';
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     SwapFormsModule,
+    SwapLayoutModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
