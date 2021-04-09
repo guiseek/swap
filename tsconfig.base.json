@@ -20,7 +20,8 @@
       "@swap/layout": ["libs/swap/layout/src/index.ts"],
       "@swap/server/common": ["libs/server/common/src/index.ts"],
       "@swap/server/users": ["libs/server/users/src/index.ts"],
-      "@swap/server/auth": ["libs/server/auth/src/index.ts"]
+      "@swap/server/auth": ["libs/server/auth/src/index.ts"],
+      "@swap/swap/storybook": ["libs/swap/storybook/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
