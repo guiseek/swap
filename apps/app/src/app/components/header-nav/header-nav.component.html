@@ -1,0 +1,31 @@
+<section>
+  <ng-content select="img"></ng-content>
+  <ng-content select="h1"></ng-content>
+</section>
+<ul>
+  <ng-container *ngIf="nav.items$ | async as list">
+    <li *ngFor="let item of list" [class]="{ dropdown: item.children?.length }">
+      <ng-container *ngIf="item.children?.length; else link">
+        <button
+          type="button"
+          class="dropdown__title"
+          [attr.aria-expanded]="item.expanded"
+          [attr.aria-controls]="item.id"
+          (mouseover)="toggle(item)"
+          (mouseout)="toggle(item)"
+        >
+          {{ item.label }}
+        </button>
+      </ng-container>
+      <ng-template #link>
+        <a [routerLink]="item.route">{{ item.label }}</a>
+      </ng-template>
+
+      <ul class="dropdown__menu" [id]="item.id">
+        <li *ngFor="let child of item.children">
+          <a [routerLink]="child.route">{{ child.label }}</a>
+        </li>
+      </ul>
+    </li>
+  </ng-container>
+</ul>

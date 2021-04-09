@@ -1,0 +1,13 @@
+<form id="form" [formGroup]="form">
+  <swap-select formControlName="required" placeholder="- Selecione -">
+    <swap-option
+      *ngFor="let item of options"
+      [key]="item.value"
+      [value]="item.label"
+    >
+    </swap-option>
+  </swap-select>
+</form>
+
+
+<footer swap-form></footer>

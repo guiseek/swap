@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 
 @Component({
   templateUrl: './radio.container.html',
-  styleUrls: ['./radio.container.scss'],
 })
 export class RadioContainer {
   form = this.fb.group({

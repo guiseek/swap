@@ -2,22 +2,21 @@
   <label swap-textfield standard>
     <span>CPF</span>
     <input
-    type="text"
-    swapControl
-    formControlName="standard"
-    swap-mask="DDD.DDD.DDD-DD"
+      type="text"
+      swapControl
+      formControlName="standard"
+      swap-mask="DDD.DDD.DDD-DD"
     />
     <output>Error</output>
   </label>
 
-
   <label swap-textfield outlined>
     <span>Telefone</span>
     <input
-    type="text"
-    swapControl
-    formControlName="outlined"
-    swap-mask="(DD) DDDDD-DDDD"
+      type="text"
+      swapControl
+      formControlName="outlined"
+      swap-mask="(DD) DDDDD-DDDD"
     />
     <output>Error</output>
   </label>
@@ -27,11 +26,8 @@
     <input type="text" swapControl formControlName="filled" swap-currency />
     <output>Error</output>
   </label>
-
-
 </form>
 
-<footer>
-  <button form="swap" swap-button mode="secondary" type="reset">Resetar</button>
-  <button form="swap" swap-button mode="primary">Enviar</button>
-</footer>
+<footer swap-form="swap"></footer>
+
+<pre>{{ form.value | json }}</pre>

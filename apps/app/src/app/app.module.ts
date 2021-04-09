@@ -6,11 +6,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SwapFormsModule } from '@swap/forms';
 
 import { AppComponent } from './app.component';
+import { FormFooterComponent, HeaderNavComponent } from './components';
+import { NavigationService } from './shared';
 import {
   TextfieldContainer,
   CheckboxContainer,
   RadioContainer,
   SliderContainer,
+  SelectContainer
 } from './containers';
 
 const routes: Routes = [
@@ -19,15 +22,19 @@ const routes: Routes = [
   { path: 'checkbox', component: CheckboxContainer },
   { path: 'radio', component: RadioContainer },
   { path: 'slider', component: SliderContainer },
+  { path: 'select', component: SelectContainer },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    FormFooterComponent,
     TextfieldContainer,
     CheckboxContainer,
     RadioContainer,
     SliderContainer,
+    HeaderNavComponent,
+    SelectContainer,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [NavigationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

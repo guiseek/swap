@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 
 @Component({
   templateUrl: './slider.container.html',
-  styleUrls: ['./slider.container.scss'],
 })
 export class SliderContainer {
   form = this.fb.group({

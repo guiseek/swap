@@ -1,11 +1,16 @@
-import { NgModule } from '@angular/core';
+import { OverlayModule } from '@angular/cdk/overlay'
+import { PortalModule } from '@angular/cdk/portal'
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import {
   TextfieldComponent,
   CheckboxComponent,
   RadioComponent,
   SliderComponent,
   ButtonComponent,
+  SelectComponent,
+  OptionComponent,
+  SelectPanelComponent,
 } from './components';
 import {
   ControlDirective,
@@ -14,7 +19,7 @@ import {
 } from './directives';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, OverlayModule, PortalModule],
   declarations: [
     TextfieldComponent,
     ControlDirective,
@@ -24,6 +29,9 @@ import {
     RadioComponent,
     SliderComponent,
     ButtonComponent,
+    SelectComponent,
+    SelectPanelComponent,
+    OptionComponent,
   ],
   exports: [
     TextfieldComponent,
@@ -34,6 +42,9 @@ import {
     RadioComponent,
     SliderComponent,
     ButtonComponent,
+    SelectComponent,
+    SelectPanelComponent,
+    OptionComponent,
   ],
 })
 export class SwapFormsModule {}

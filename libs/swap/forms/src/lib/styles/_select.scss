@@ -1,0 +1,141 @@
+swap-select {
+  position: relative;
+  min-width: 5.625rem;
+  padding: 0.5rem 0 1.5rem;
+
+  .input {
+    position: relative;
+    margin: 0;
+    outline: 0;
+
+    input {
+      width: 100%;
+      height: 1.5rem;
+      line-height: 1.3125rem;
+      border: none;
+      border-bottom: 1px solid $seek-primary-disabled-color;
+      text-overflow: ellipsis;
+      white-space: normal;
+      overflow: hidden;
+      color: $seek-primary-default-background;
+      margin-top: 4px;
+      padding: 4px 0 4px 0px;
+      // padding-bottom: 2px;
+      outline: 0;
+      cursor: pointer;
+      font-size: inherit;
+
+      &:focus {
+        border-bottom: 2px solid $seek-primary-default-color;
+      }
+
+      &:disabled {
+        cursor: default;
+        color: #93a1aa;
+        border-bottom: solid 1px #93a1aa;
+      }
+
+      &:disabled + .panel-arrow {
+        color: #93a1aa;
+      }
+    }
+
+    .panel-arrow {
+      position: absolute;
+      color: inherit;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &.required label:after {
+      color: $seek-error-color;
+      content: '*';
+      position: relative;
+      left: 5px;
+      bottom: 5px;
+    }
+  }
+}
+
+.swap-options-container {
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+  display: block;
+  overflow: auto;
+}
+
+swap-option {
+  display: block;
+  color: #333;
+  padding: 0 0.875rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-family: sans-serif;
+  background-color: $seek-primary-default-color;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  cursor: pointer;
+
+  position: relative;
+
+  &::after {
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    transition: border-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  }
+
+  &.selected {
+    color: $seek-primary-default-color;
+    background-color: $seek-primary-default-background;
+
+    &:hover,
+    &.active {
+      background-color: $seek-primary-default-background;
+
+      @media screen and (-ms-high-contrast: active) {
+        background-color: $seek-primary-default-background;
+      }
+    }
+  }
+
+  &:hover,
+  &.active {
+    outline: none;
+    &::after {
+      color: $seek-primary-default-color;
+      background-color: rgba($seek-primary-default-background, 0.12);
+    }
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $seek-primary-default-background;
+    }
+  }
+
+  &.disabled {
+    color: #93a1aa;
+    cursor: auto;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: #fff;
+
+      @media screen and (-ms-high-contrast: active) {
+        background-color: #fff;
+      }
+    }
+  }
+}

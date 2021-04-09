@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 
 @Component({
   templateUrl: './checkbox.container.html',
-  styleUrls: ['./checkbox.container.scss'],
 })
 export class CheckboxContainer {
   form = this.fb.group({
@@ -12,6 +11,4 @@ export class CheckboxContainer {
   });
 
   constructor(readonly fb: FormBuilder) {}
-
-  ngOnInit(): void {}
 }
