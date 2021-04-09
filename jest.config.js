@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/server/common',
     '<rootDir>/libs/server/users',
     '<rootDir>/libs/server/auth',
+    '<rootDir>/libs/swap/storybook',
   ],
 };
