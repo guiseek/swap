@@ -1,5 +1,3 @@
-@import './variables';
-
 label[swap-radio] {
   z-index: 0;
   position: relative;
@@ -134,5 +132,16 @@ label[swap-radio] {
 
   > input + span {
     color: $seek-primary-default-color;
+  }
+}
+
+@media (max-width: 768px) {
+  label[swap-radio] {
+    display: flex;
+    align-items: center;
+    > output {
+      padding: 0 10px;
+      font-size: 80%;
+    }
   }
 }

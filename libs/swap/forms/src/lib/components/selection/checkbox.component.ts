@@ -1,8 +1,9 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InputBase } from './../input-base';
-import { Component } from '@angular/core';
 
 @Component({
   selector: 'label[swap-checkbox]',
   templateUrl: '../template.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxComponent extends InputBase {}

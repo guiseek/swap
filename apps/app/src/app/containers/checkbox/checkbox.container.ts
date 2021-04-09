@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
 })
 export class CheckboxContainer {
   form = this.fb.group({
-    one: [true, [Validators.required]],
-    two: ['', [Validators.required]]
+    one: [true, [Validators.requiredTrue]],
+    two: [false, [Validators.requiredTrue]]
   });
 
   constructor(readonly fb: FormBuilder) {}

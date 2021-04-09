@@ -156,3 +156,14 @@
     }
   }
 }
+@media (max-width: 768px) {
+  :host {
+    display: flex;
+    flex-direction: column;
+    > ul {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+}
+

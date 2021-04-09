@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.nav.setItems([
-      { route: '/textfield', label: 'TextField' },
+      { route: '/textfield', label: 'Textfield' },
       { route: '/slider', label: 'Slider' },
       { route: '/select', label: 'Select' },
       {

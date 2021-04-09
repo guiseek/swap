@@ -1,12 +1,20 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import {
+  Input,
+  Component,
+  HostBinding,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 export type StyleMode = 'primary' | 'secondary';
 
 @Component({
   selector: 'button[swap-button]',
   template: '<ng-content></ng-content>',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
+  private _mode: StyleMode = 'primary';
+
   @Input()
   @HostBinding('attr.mode')
   get mode(): StyleMode {
@@ -16,6 +24,4 @@ export class ButtonComponent {
   set mode(style: StyleMode) {
     this._mode = style;
   }
-
-  private _mode: StyleMode = 'primary';
 }
