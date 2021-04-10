@@ -398,6 +398,126 @@
           }
         }
       }
+    },
+    "server-common": {
+      "root": "libs/server/common",
+      "sourceRoot": "libs/server/common/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/server/common/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/server/common"
+          ],
+          "options": {
+            "jestConfig": "libs/server/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/server/common",
+            "tsConfig": "libs/server/common/tsconfig.lib.json",
+            "packageJson": "libs/server/common/package.json",
+            "main": "libs/server/common/src/index.ts",
+            "assets": [
+              "libs/server/common/*.md"
+            ]
+          }
+        }
+      }
+    },
+    "server-users": {
+      "root": "libs/server/users",
+      "sourceRoot": "libs/server/users/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/server/users/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/server/users"
+          ],
+          "options": {
+            "jestConfig": "libs/server/users/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/server/users",
+            "tsConfig": "libs/server/users/tsconfig.lib.json",
+            "packageJson": "libs/server/users/package.json",
+            "main": "libs/server/users/src/index.ts",
+            "assets": [
+              "libs/server/users/*.md"
+            ]
+          }
+        }
+      }
+    },
+    "server-auth": {
+      "root": "libs/server/auth",
+      "sourceRoot": "libs/server/auth/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/server/auth/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/server/auth"
+          ],
+          "options": {
+            "jestConfig": "libs/server/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/server/auth",
+            "tsConfig": "libs/server/auth/tsconfig.lib.json",
+            "packageJson": "libs/server/auth/package.json",
+            "main": "libs/server/auth/src/index.ts",
+            "assets": [
+              "libs/server/auth/*.md"
+            ]
+          }
+        }
+      }
     }
   }
 }

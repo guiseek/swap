@@ -2,6 +2,7 @@
   $seek-primary-default-background: rgba(33, 89, 243, 1);
   $seek-primary-default-color: rgba(255, 255, 255, 1);
   $seek-transition: 280ms all 120ms ease-out;
+  $seek-primary-default-border: rgba(0, 0, 0, 0.24);
 
   .dropdown__title {
     background-color: transparent;
@@ -103,7 +104,7 @@
       box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
 
       a {
-        color: rgba(var(--uiseek-onsurface-rgb, 0, 0, 0), 0.82);
+        color: rgba($seek-primary-default-border, 0.82);
         display: block;
         padding: 0.5em;
         opacity: 0;
