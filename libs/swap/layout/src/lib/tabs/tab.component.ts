@@ -28,6 +28,7 @@ export class TabComponent {
   constructor(tabs: TabsContainer) {
     tabs.addTab(this);
   }
+
   getTabTitle() {
     return this.tabTitle;
   }

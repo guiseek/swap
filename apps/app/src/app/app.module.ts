@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -24,6 +25,11 @@ const routes: Routes = [
   { path: 'radio', component: RadioContainer },
   { path: 'slider', component: SliderContainer },
   { path: 'select', component: SelectContainer },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+  },
 ];
 
 @NgModule({
@@ -41,6 +47,7 @@ const routes: Routes = [
     BrowserModule,
     SwapFormsModule,
     SwapLayoutModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],

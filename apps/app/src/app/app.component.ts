@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.nav.setItems([
+      { route: '/auth', label: 'Auth' },
       { route: '/textfield', label: 'Textfield' },
       { route: '/slider', label: 'Slider' },
       { route: '/select', label: 'Select' },

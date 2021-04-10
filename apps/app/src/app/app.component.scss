@@ -1,52 +1,15 @@
-/*
- * Remove template code below
- */
 :host {
-  flex: 1;
+  height: 100%;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
-  min-width: 300px;
-  // margin: 20px auto;
-
-  // > nav {
-  //   display: flex;
-  //   justify-items: center;
-  //   justify-content: center;
-  //   gap: 20px;
-  //   padding: 20px;
-  // }
-}
-
-
-
-.gutter-left {
-  margin-left: 9px;
-}
-
-.col-span-2 {
-  grid-column: span 2;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-header {
-  border-color: #0d1117;
-  border-width: 3px;
-  border-style: solid;
-  background-color: transparent;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5px;
-  border-radius: 56px 12px 12px 56px;
 }
 
 main {
-  padding: 0 36px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 p {

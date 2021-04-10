@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/apps/app',
     '<rootDir>/libs/swap/forms',
     '<rootDir>/libs/swap/layout',
+    '<rootDir>/apps/server',
   ],
 };
