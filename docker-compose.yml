@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+  mongo:
+    image: mongo:latest
+    environment:
+      - MONGODB_DATABASE="swap"
+    ports:
+      - 27017:27017
+    # networks:
+    #   - network-swap
+
+  # mongo-express:
+  #   image: mongo-express
+  #   ports:
+  #     - 8081:8081
+  #   networks:
+  #     - network-swap
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: root
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: 123swap
+  #     ME_CONFIG_BASICAUTH_USERNAME: admin
+  #     ME_CONFIG_BASICAUTH_PASSWORD: password
+  #   depends_on:
+  #     - mongo
+
+  # nestjs-auth:
+  #   image: guiseek/swap-server
+  #   build: .
+  #   command: npm run start
+  #   restart: always
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - serverdata:/usr/src/app
+  #   networks:
+  #     - network-swap
+  #   depends_on:
+  #     - mongo
+
+# volumes:
+#   mongodata:
+#   serverdata:
+
+# networks:
+#   network-swap:

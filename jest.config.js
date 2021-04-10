@@ -5,5 +5,8 @@ module.exports = {
     '<rootDir>/libs/swap/forms',
     '<rootDir>/libs/swap/layout',
     '<rootDir>/apps/server',
+    '<rootDir>/libs/server/common',
+    '<rootDir>/libs/server/users',
+    '<rootDir>/libs/server/auth',
   ],
 };
