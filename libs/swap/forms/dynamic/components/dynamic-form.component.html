@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit(form)" [formGroup]="form">
+  <div *ngFor="let input of inputs" class="form-row">
+    <swap-dynamic-input [input]="input" [form]="form"></swap-dynamic-input>
+  </div>
+
+  <div class="form-row">
+    <button type="submit" [disabled]="!form.valid" translate>
+      {{ options.submitLabel }}
+    </button>
+  </div>
+</form>
