@@ -156,6 +156,7 @@
             "main": "apps/app/src/main.ts",
             "polyfills": "apps/app/src/polyfills.ts",
             "tsConfig": "apps/app/tsconfig.app.json",
+            "allowedCommonJsDependencies": ["lodash"],
             "aot": true,
             "assets": [
               "apps/app/src/favicon.ico",

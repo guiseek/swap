@@ -1,0 +1,40 @@
+<label swap-textfield filled [formGroup]="form">
+  <span [attr.for]="input.name">{{ input.label }}</span>
+
+  <ng-container [ngSwitch]="input.controlType">
+    <input
+      swapControl
+      *ngSwitchCase="'text'"
+      [formControlName]="input.name"
+      [id]="input.name"
+      type="{{ input.controlType }}"
+    />
+
+    <input
+      swapControl
+      *ngSwitchCase="'checkbox'"
+      [formControlName]="input.name"
+      [id]="input.name"
+      type="{{ input.controlType }}"
+    />
+
+    <textarea
+      swapControl
+      *ngSwitchCase="'textarea'"
+      [formControlName]="input.name"
+      [id]="input.name"
+    ></textarea>
+
+    <select
+      [id]="input.name"
+      *ngSwitchCase="'select'"
+      [formControlName]="input.name"
+    >
+      <option *ngFor="let opt of input.options" [value]="opt.value">
+        {{ opt.label }}
+      </option>
+    </select>
+  </ng-container>
+
+  <div class="errorMessage" *ngIf="!isValid()">{{ input.label }}</div>
+</label>
