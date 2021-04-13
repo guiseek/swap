@@ -13,9 +13,10 @@ import {
   SelectPanelComponent,
 } from './components';
 import {
-  ControlDirective,
-  CurrencyMaskDirective,
   MaskDirective,
+  CurrencyMaskDirective,
+  ControlDirective,
+  CheckboxGroupDirective,
 } from './directives';
 
 @NgModule({
@@ -32,6 +33,7 @@ import {
     SelectComponent,
     SelectPanelComponent,
     OptionComponent,
+    CheckboxGroupDirective,
   ],
   exports: [
     TextfieldComponent,
@@ -45,6 +47,7 @@ import {
     SelectComponent,
     SelectPanelComponent,
     OptionComponent,
+    CheckboxGroupDirective,
   ],
 })
 export class SwapFormsModule {}

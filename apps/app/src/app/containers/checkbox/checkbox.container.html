@@ -1,14 +1,32 @@
 <form id="swap" [formGroup]="form">
   <label swap-checkbox>
-    <span>Label</span>
+    <span>One</span>
     <input type="checkbox" swapControl formControlName="one" />
-    <output>Error</output>
   </label>
   <label swap-checkbox>
-    <span>Label</span>
+    <span>Two</span>
     <input type="checkbox" swapControl formControlName="two" />
-    <output>Error</output>
   </label>
+
+  <fieldset formGroupName="group" class="mt-24px">
+    <legend>Group</legend>
+
+    <label class="swap-checkbox">
+      <input type="checkbox" swap-checkbox-group />
+      <span>Parent</span>
+    </label>
+
+    <hr />
+
+    <label swap-checkbox class="ml-12px">
+      <span>One</span>
+      <input type="checkbox" swap-control formControlName="one" />
+    </label>
+    <label swap-checkbox class="ml-12px">
+      <span>Two</span>
+      <input type="checkbox" swap-control formControlName="two" />
+    </label>
+  </fieldset>
 </form>
 
 <footer swap-form="swap"></footer>

@@ -6,9 +6,13 @@ import { DynamicInputComponent } from './components/dynamic-input.component';
 
 import 'reflect-metadata';
 
+/**
+ * @version beta
+ * @since 10/04/2021
+ */
 @NgModule({
   imports: [FormsModule, BrowserModule, ReactiveFormsModule],
   declarations: [DynamicFormComponent, DynamicInputComponent],
   exports: [DynamicFormComponent, DynamicInputComponent],
 })
-export class SwapFormsDynamidModule {}
+export class SwapFormsDynamicModule {}
