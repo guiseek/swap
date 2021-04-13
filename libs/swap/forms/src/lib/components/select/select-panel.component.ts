@@ -8,7 +8,7 @@ import { CdkPortal } from '@angular/cdk/portal';
     <ng-template cdk-portal>
       <ng-content></ng-content>
     </ng-template>
-  `
+  `,
 })
 export class SelectPanelComponent {
   @Input()

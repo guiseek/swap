@@ -5,7 +5,7 @@ import { Option, Select } from './interfaces';
 
 @Component({
   selector: 'swap-option',
-  template: `{{ value }}`
+  template: `{{ value }}`,
 })
 export class OptionComponent implements Option, Highlightable {
   @Input()

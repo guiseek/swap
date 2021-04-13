@@ -31,9 +31,6 @@
     "swap-forms": { "tags": [] },
     "swap-layout": { "tags": [] },
     "server": { "tags": [] },
-    "server-common": { "tags": [] },
-    "server-users": { "tags": [] },
-    "server-auth": { "tags": [] },
     "swap-storybook": { "tags": [] }
   }
 }

@@ -25,7 +25,7 @@ export class NavFocusDirective {
       .subscribe(() => {
         // const mainHeader = document.querySelector('#main-content-header');
         const mainHeader = this.mainHeader;
-        mainHeader.addEventListener('focus', console.log)
+        mainHeader.addEventListener('focus', console.log);
         console.log(mainHeader);
         if (mainHeader) {
           mainHeader.focus();

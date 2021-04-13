@@ -9,10 +9,7 @@ export default {
 
 export const primary = () => ({
   moduleMetadata: {
-    imports: [
-      ReactiveFormsModule,
-      SwapFormsModule
-    ],
+    imports: [ReactiveFormsModule, SwapFormsModule],
   },
   component: CheckboxComponent,
   props: {

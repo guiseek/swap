@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'storybook-textfield',
   templateUrl: './textfield.component.html',
-  styleUrls: ['../styles/forms.scss'],
+  styleUrls: ['../swap.container.scss'],
 })
 export class TextfieldComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

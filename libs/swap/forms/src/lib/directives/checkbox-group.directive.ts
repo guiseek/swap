@@ -22,6 +22,10 @@ export class CheckboxGroupDirective implements OnInit, OnDestroy {
     private container: FormGroupName
   ) {}
 
+  /**
+   * Controle do checkbox group baseado
+   * em alterações de controles filhos.
+   */
   ngOnInit(): void {
     if (this.container?.control) {
       this.container.valueChanges
@@ -34,6 +38,10 @@ export class CheckboxGroupDirective implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Controle dos filhos baseado em
+   * alterações do checkbox group.
+   */
   @HostListener('change', ['$event.target'])
   onChange({ checked }: HTMLInputElement) {
     this.updateProperty('indeterminate', false);

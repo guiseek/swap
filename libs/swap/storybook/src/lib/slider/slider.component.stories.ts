@@ -2,17 +2,17 @@ import { text, number, boolean } from '@storybook/addon-knobs';
 import { SliderComponent } from './slider.component';
 
 export default {
-  title: 'SliderComponent'
-}
+  title: 'SliderComponent',
+};
 
 export const primary = () => ({
   moduleMetadata: {
-    imports: []
+    imports: [],
   },
   component: SliderComponent,
   props: {
     label: text('label', 'Slider'),
     value: text('value', ''),
     disabled: text('disabled', ''),
-  }
-})
+  },
+});

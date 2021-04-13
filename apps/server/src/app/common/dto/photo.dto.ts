@@ -4,7 +4,7 @@ export class PhotoDto {
     this.description = object.description;
     this.tags = object.tags;
     this.date = object.date;
-  };
+  }
   url: string;
   description: string;
   tags: string[];

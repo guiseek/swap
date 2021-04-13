@@ -9,7 +9,7 @@ label[swap-textfield] {
 
   padding-top: 6px;
 
-  &[filled]  {
+  &[filled] {
     /* Input, Textarea */
     > input,
     > textarea {
@@ -113,7 +113,6 @@ label[swap-textfield] {
   }
 
   &[outlined] {
-
     /* Input, Textarea */
     > input,
     > textarea {

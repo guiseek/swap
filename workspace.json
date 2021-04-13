@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
+  "cli": { "defaultCollection": "@nrwl/angular" },
   "defaultProject": "web",
   "generators": {
     "@nrwl/web:application": {
@@ -28,9 +26,7 @@
       "unitTestRunner": "jest",
       "strict": true
     },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
+    "@nrwl/angular:component": { "style": "scss" }
   },
   "projects": {
     "web": {
@@ -40,22 +36,15 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/web",
             "index": "apps/web/src/index.html",
             "main": "apps/web/src/main.ts",
             "polyfills": "apps/web/src/polyfills.ts",
             "tsConfig": "apps/web/tsconfig.app.json",
-            "assets": [
-              "apps/web/src/favicon.ico",
-              "apps/web/src/assets"
-            ],
-            "styles": [
-              "apps/web/src/styles.scss"
-            ],
+            "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
+            "styles": ["apps/web/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -85,28 +74,18 @@
         },
         "serve": {
           "executor": "@nrwl/web:dev-server",
-          "options": {
-            "buildTarget": "web:build"
-          },
+          "options": { "buildTarget": "web:build" },
           "configurations": {
-            "production": {
-              "buildTarget": "web:build:production"
-            }
+            "production": { "buildTarget": "web:build:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/web/**/*.ts"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/web/**/*.ts"] }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/web"
-          ],
+          "outputs": ["coverage/apps/web"],
           "options": {
             "jestConfig": "apps/web/jest.config.js",
             "passWithNoTests": true
@@ -127,18 +106,12 @@
             "devServerTarget": "web:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "web:serve:production"
-            }
+            "production": { "devServerTarget": "web:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/web-e2e/**/*.{js,ts}"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/web-e2e/**/*.{js,ts}"] }
         }
       }
     },
@@ -158,13 +131,8 @@
             "tsConfig": "apps/app/tsconfig.app.json",
             "allowedCommonJsDependencies": ["lodash"],
             "aot": true,
-            "assets": [
-              "apps/app/src/favicon.ico",
-              "apps/app/src/assets"
-            ],
-            "styles": [
-              "apps/app/src/styles.scss"
-            ],
+            "assets": ["apps/app/src/favicon.ico", "apps/app/src/assets"],
+            "styles": ["apps/app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -204,16 +172,12 @@
             "proxyConfig": "apps/app/proxy.conf.json"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "app:build:production"
-            }
+            "production": { "browserTarget": "app:build:production" }
           }
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "app:build"
-          }
+          "options": { "browserTarget": "app:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -226,9 +190,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/app"
-          ],
+          "outputs": ["coverage/apps/app"],
           "options": {
             "jestConfig": "apps/app/jest.config.js",
             "passWithNoTests": true
@@ -249,18 +211,12 @@
             "devServerTarget": "app:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "app:serve:production"
-            }
+            "production": { "devServerTarget": "app:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/app-e2e/**/*.{js,ts}"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/app-e2e/**/*.{js,ts}"] }
         }
       }
     },
@@ -293,9 +249,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/swap/forms"
-          ],
+          "outputs": ["coverage/libs/swap/forms"],
           "options": {
             "jestConfig": "libs/swap/forms/jest.config.js",
             "passWithNoTests": true
@@ -332,9 +286,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/swap/layout"
-          ],
+          "outputs": ["coverage/libs/swap/layout"],
           "options": {
             "jestConfig": "libs/swap/layout/jest.config.js",
             "passWithNoTests": true
@@ -349,16 +301,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/server",
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
-            "assets": [
-              "apps/server/src/assets"
-            ]
+            "assets": ["apps/server/src/assets"]
           },
           "configurations": {
             "production": {
@@ -376,146 +324,18 @@
         },
         "serve": {
           "executor": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "server:build"
-          }
+          "options": { "buildTarget": "server:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/server/**/*.ts"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/server/**/*.ts"] }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/server"
-          ],
+          "outputs": ["coverage/apps/server"],
           "options": {
             "jestConfig": "apps/server/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "server-common": {
-      "root": "libs/server/common",
-      "sourceRoot": "libs/server/common/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/server/common/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/server/common"
-          ],
-          "options": {
-            "jestConfig": "libs/server/common/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "build": {
-          "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
-          "options": {
-            "outputPath": "dist/libs/server/common",
-            "tsConfig": "libs/server/common/tsconfig.lib.json",
-            "packageJson": "libs/server/common/package.json",
-            "main": "libs/server/common/src/index.ts",
-            "assets": [
-              "libs/server/common/*.md"
-            ]
-          }
-        }
-      }
-    },
-    "server-users": {
-      "root": "libs/server/users",
-      "sourceRoot": "libs/server/users/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/server/users/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/server/users"
-          ],
-          "options": {
-            "jestConfig": "libs/server/users/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "build": {
-          "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
-          "options": {
-            "outputPath": "dist/libs/server/users",
-            "tsConfig": "libs/server/users/tsconfig.lib.json",
-            "packageJson": "libs/server/users/package.json",
-            "main": "libs/server/users/src/index.ts",
-            "assets": [
-              "libs/server/users/*.md"
-            ]
-          }
-        }
-      }
-    },
-    "server-auth": {
-      "root": "libs/server/auth",
-      "sourceRoot": "libs/server/auth/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/server/auth/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/server/auth"
-          ],
-          "options": {
-            "jestConfig": "libs/server/auth/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "build": {
-          "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
-          "options": {
-            "outputPath": "dist/libs/server/auth",
-            "tsConfig": "libs/server/auth/tsconfig.lib.json",
-            "packageJson": "libs/server/auth/package.json",
-            "main": "libs/server/auth/src/index.ts",
-            "assets": [
-              "libs/server/auth/*.md"
-            ]
           }
         }
       }
@@ -527,16 +347,14 @@
       "prefix": "storybook",
       "targets": {
         "build": {
-          "executor": "@nrwl/angular:ng-packagr-lite",
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
           "options": {
-            "tsConfig": "libs/swap/storybook/tsconfig.lib.json",
-            "project": "libs/swap/storybook/ng-package.json"
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/swap-storybook",
+            "config": { "configFolder": "libs/swap/storybook/.storybook" }
           },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/swap/storybook/tsconfig.lib.prod.json"
-            }
-          }
+          "configurations": { "ci": { "quiet": true } }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -549,9 +367,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/swap/storybook"
-          ],
+          "outputs": ["coverage/libs/swap/storybook"],
           "options": {
             "jestConfig": "libs/swap/storybook/jest.config.js",
             "passWithNoTests": true
@@ -562,33 +378,19 @@
           "options": {
             "uiFramework": "@storybook/angular",
             "port": 4400,
-            "config": {
-              "configFolder": "libs/swap/storybook/.storybook"
-            }
+            "config": { "configFolder": "libs/swap/storybook/.storybook" }
           },
-          "configurations": {
-            "ci": {
-              "quiet": true
-            }
-          }
+          "configurations": { "ci": { "quiet": true } }
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/swap-storybook",
-            "config": {
-              "configFolder": "libs/swap/storybook/.storybook"
-            }
+            "config": { "configFolder": "libs/swap/storybook/.storybook" }
           },
-          "configurations": {
-            "ci": {
-              "quiet": true
-            }
-          }
+          "configurations": { "ci": { "quiet": true } }
         }
       }
     }
