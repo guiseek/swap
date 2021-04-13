@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Navigation, NavigationService } from './shared';
 
 @Component({
@@ -6,15 +12,22 @@ import { Navigation, NavigationService } from './shared';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'app';
 
   nav: Navigation;
+
+  @ViewChild('main')
+  main: ElementRef<HTMLElement>;
 
   constructor(private _navigation: NavigationService) {
     const nav = new Navigation('nav', []);
     this._navigation.register(nav);
     this.nav = nav;
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.main);
   }
 
   ngOnInit(): void {
