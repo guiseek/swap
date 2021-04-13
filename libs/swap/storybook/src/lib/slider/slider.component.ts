@@ -4,7 +4,7 @@ import { FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'storybook-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['../styles/forms.scss'],
+  styleUrls: ['../swap.container.scss'],
 })
 export class SliderComponent {
   control = new FormControl(25);

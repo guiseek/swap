@@ -10,7 +10,7 @@ import { AppModule } from './app/app.module';
 import * as express from 'express';
 import * as helmet from 'helmet';
 import { json, urlencoded } from 'body-parser';
-import { AllExceptionsFilter } from '@swap/server/common';
+import { AllExceptionsFilter } from './app/common/filters/all-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

@@ -6,7 +6,7 @@ import { NgControl } from '@angular/forms';
 })
 export class ControlDirective {
   @HostBinding('attr.placeholder')
-  readonly placeholderSpace = ' '
+  readonly placeholderSpace = ' ';
 
   constructor(public ngControl: NgControl) {}
 }

@@ -1,15 +1,13 @@
-
 import { SelectComponent } from './select.component';
 
 export default {
-  title: 'SelectComponent'
-}
+  title: 'SelectComponent',
+};
 
 export const primary = () => ({
   moduleMetadata: {
-    imports: []
+    imports: [],
   },
   component: SelectComponent,
-  props: {
-  }
-})
+  props: {},
+});

@@ -1,9 +1,9 @@
-import { ElementRef } from '@angular/core'
+import { ElementRef } from '@angular/core';
 
-import { unmaskedNumericValueFor } from './mask'
+import { unmaskedNumericValueFor } from './mask';
 
 export function cursorPositionFor(el: ElementRef<any> | any): number {
-  return (el.nativeElement || el).selectionStart
+  return (el.nativeElement || el).selectionStart;
 }
 
 /**
@@ -13,8 +13,8 @@ export function setCursorPositionFor(
   el: ElementRef<any> | any,
   nextPos: number
 ) {
-  const nativeEl = el.nativeElement || el
-  nativeEl.selectionStart = nativeEl.selectionEnd = nextPos
+  const nativeEl = el.nativeElement || el;
+  nativeEl.selectionStart = nativeEl.selectionEnd = nextPos;
 }
 
 /** Adjusts cursorPosition for input element. Skips non decimal/letter chars.
@@ -29,45 +29,45 @@ export function nextCursorPositionFor(
   decimalsOnly = false,
   removingAtLeft = false
 ): number {
-  const initialCursorPosition = cursorPositionFor(el)
-  const maskCheck = decimalsOnly ? /[^\d]/ : /[^\w]/
+  const initialCursorPosition = cursorPositionFor(el);
+  const maskCheck = decimalsOnly ? /[^\d]/ : /[^\w]/;
 
   const isAdding =
     removingAtLeft || !addingAtLeft
       ? nextValue.length > previousValue?.length
-      : nextValue.length >= previousValue?.length
+      : nextValue.length >= previousValue?.length;
 
-  let nextCursorPosition = initialCursorPosition
+  let nextCursorPosition = initialCursorPosition;
 
   if (addingAtLeft && previousValue) {
     if (isAdding) {
-      nextCursorPosition += nextValue.length - previousValue.length - 1
+      nextCursorPosition += nextValue.length - previousValue.length - 1;
     } else if (previousValue.length > nextValue.length) {
-      nextCursorPosition += nextValue.length - previousValue.length + 1
+      nextCursorPosition += nextValue.length - previousValue.length + 1;
     } else {
       nextCursorPosition +=
         unmaskedNumericValueFor(previousValue) >
         unmaskedNumericValueFor(nextValue)
           ? 1
-          : 0
+          : 0;
     }
   }
 
-  let testPosition = nextCursorPosition - 1
+  let testPosition = nextCursorPosition - 1;
   while (maskCheck.test(nextValue[testPosition])) {
     if (isAdding) {
-      testPosition++
-      nextCursorPosition++
+      testPosition++;
+      nextCursorPosition++;
     } else {
-      testPosition--
-      nextCursorPosition--
+      testPosition--;
+      nextCursorPosition--;
     }
 
     if (testPosition < 0) {
-      nextCursorPosition = initialCursorPosition + 1
-      break
+      nextCursorPosition = initialCursorPosition + 1;
+      break;
     }
   }
 
-  return nextCursorPosition
+  return nextCursorPosition;
 }

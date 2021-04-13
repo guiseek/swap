@@ -4,7 +4,7 @@ import { FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'storybook-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrls: ['../swap.container.scss']
+  styleUrls: ['./checkbox.component.scss'],
 })
 export class CheckboxComponent {
   control = new FormControl(false, [Validators.requiredTrue]);

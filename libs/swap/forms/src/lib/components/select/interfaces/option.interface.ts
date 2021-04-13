@@ -1,22 +1,22 @@
-import { Highlightable } from '@angular/cdk/a11y'
-import { Select } from './select.interface'
+import { Highlightable } from '@angular/cdk/a11y';
+import { Select } from './select.interface';
 
 export interface Option extends Highlightable {
-  key: string
+  key: string;
 
-  value: string
+  value: string;
 
-  selected: boolean
+  selected: boolean;
 
-  active: boolean
+  active: boolean;
 
-  select: Select
+  select: Select;
 
-  getLabel: () => string
+  getLabel: () => string;
 
-  setActiveStyles: () => void
+  setActiveStyles: () => void;
 
-  setInactiveStyles: () => void
+  setInactiveStyles: () => void;
 
-  onClick: (event: UIEvent) => void
+  onClick: (event: UIEvent) => void;
 }

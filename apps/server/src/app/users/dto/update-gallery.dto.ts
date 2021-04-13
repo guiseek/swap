@@ -1,4 +1,4 @@
-import { CreatePhotoDto } from "../../common/dto/create-photo.dto";
+import { CreatePhotoDto } from '../../common/dto/create-photo.dto';
 
 export class UpdateGalleryDto {
   readonly email: string;

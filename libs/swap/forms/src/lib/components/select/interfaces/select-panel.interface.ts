@@ -1,22 +1,22 @@
-import { OverlayRef, OverlayConfig } from '@angular/cdk/overlay'
-import { CdkPortal } from '@angular/cdk/portal'
+import { OverlayRef, OverlayConfig } from '@angular/cdk/overlay';
+import { CdkPortal } from '@angular/cdk/portal';
 
 export interface SelectPanel {
-  reference: HTMLElement
+  reference: HTMLElement;
 
-  contentTemplate: CdkPortal
+  contentTemplate: CdkPortal;
 
-  overlayRef: OverlayRef
+  overlayRef: OverlayRef;
 
-  showing: boolean
+  showing: boolean;
 
-  show: () => void
+  show: () => void;
 
-  hide: () => void
+  hide: () => void;
 
-  onWinResize: () => void
+  onWinResize: () => void;
 
-  getOverlayConfig: () => OverlayConfig
+  getOverlayConfig: () => OverlayConfig;
 
-  syncWidth: () => void
+  syncWidth: () => void;
 }

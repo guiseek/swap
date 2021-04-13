@@ -4,6 +4,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'storybook-swap',
   template: '<ng-content></ng-content>',
   styleUrls: ['./swap.container.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class SwapContainer {}

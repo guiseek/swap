@@ -1,15 +1,13 @@
-
 import { TextfieldComponent } from './textfield.component';
 
 export default {
-  title: 'TextfieldComponent'
-}
+  title: 'TextfieldComponent',
+};
 
 export const primary = () => ({
   moduleMetadata: {
-    imports: []
+    imports: [],
   },
   component: TextfieldComponent,
-  props: {
-  }
-})
+  props: {},
+});

@@ -1,11 +1,7 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
-import {
-  PipeTransform,
-  ArgumentMetadata,
-  HttpStatus,
-} from '@nestjs/common';
+import { PipeTransform, ArgumentMetadata, HttpStatus } from '@nestjs/common';
 
 @Injectable()
 export class ValidationPipe implements PipeTransform<any> {
@@ -24,6 +20,6 @@ export class ValidationPipe implements PipeTransform<any> {
 
   private toValidate(metatype): boolean {
     const types = [String, Boolean, Number, Array, Object];
-    return !types.find(type => metatype === type);
+    return !types.find((type) => metatype === type);
   }
 }
