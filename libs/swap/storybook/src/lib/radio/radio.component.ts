@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'storybook-radio',
   templateUrl: './radio.component.html',
-  styleUrls: ['../styles/forms.scss'],
+  styleUrls: ['../swap.container.scss'],
 })
 export class RadioComponent {
   control = new FormControl(2);
