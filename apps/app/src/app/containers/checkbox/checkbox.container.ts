@@ -10,8 +10,12 @@ export class CheckboxContainer {
     one: [true, [Validators.requiredTrue]],
     two: [false, [Validators.requiredTrue]],
     group: this.fb.group({
-      one: [],
-      two: [],
+      c1: [true],
+      c2: [false],
+      c3: [true],
+      c4: [false],
+      c5: [true],
+      c6: [false],
     }),
   });
 
