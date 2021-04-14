@@ -257,7 +257,7 @@ class SliderContainer {
     }
 }
 SliderContainer.ɵfac = function SliderContainer_Factory(t) { return new (t || SliderContainer)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormBuilder"])); };
-SliderContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: SliderContainer, selectors: [["ng-component"]], decls: 9, vars: 4, consts: [["id", "swap", 3, "formGroup"], ["swap-slider", ""], ["type", "range", "swapControl", "", "formControlName", "control"], ["swap-form", "swap"]], template: function SliderContainer_Template(rf, ctx) { if (rf & 1) {
+SliderContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: SliderContainer, selectors: [["ng-component"]], decls: 9, vars: 4, consts: [["id", "swap", 3, "formGroup"], ["swap-slider", ""], ["type", "range", "swap-control", "", "formControlName", "control"], ["swap-form", "swap"]], template: function SliderContainer_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "label", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span");
@@ -478,7 +478,7 @@ class RadioContainer {
     }
 }
 RadioContainer.ɵfac = function RadioContainer_Factory(t) { return new (t || RadioContainer)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormBuilder"])); };
-RadioContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RadioContainer, selectors: [["ng-component"]], decls: 13, vars: 6, consts: [["id", "swap", 3, "formGroup"], ["swap-radio", ""], ["type", "radio", "swapControl", "", "formControlName", "control", "name", "control", 3, "value"], ["swap-form", "swap"]], template: function RadioContainer_Template(rf, ctx) { if (rf & 1) {
+RadioContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RadioContainer, selectors: [["ng-component"]], decls: 13, vars: 6, consts: [["id", "swap", 3, "formGroup"], ["swap-radio", ""], ["type", "radio", "swap-control", "", "formControlName", "control", "name", "control", 3, "value"], ["swap-form", "swap"]], template: function RadioContainer_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "label", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span");
@@ -717,7 +717,7 @@ class ControlDirective {
     }
 }
 ControlDirective.ɵfac = function ControlDirective_Factory(t) { return new (t || ControlDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControl"])); };
-ControlDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({ type: ControlDirective, selectors: [["", "swap-control", ""], ["", "swapControl", ""]], hostVars: 1, hostBindings: function ControlDirective_HostBindings(rf, ctx) { if (rf & 2) {
+ControlDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({ type: ControlDirective, selectors: [["", "swap-control", ""], ["", "swap-control", ""]], hostVars: 1, hostBindings: function ControlDirective_HostBindings(rf, ctx) { if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("placeholder", ctx.placeholderSpace);
     } } });
 
@@ -856,8 +856,8 @@ function SliderComponent_ng_container_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1, 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
 } }
-const _c1 = [[["", "swapControl", ""], ["", "swap-control", ""]], [["span"]], [["output"]]];
-const _c2 = ["[swapControl],[swap-control]", "span", "output"];
+const _c1 = [[["", "swap-control", ""], ["", "swap-control", ""]], [["span"]], [["output"]]];
+const _c2 = ["[swap-control],[swap-control]", "span", "output"];
 class SliderComponent extends _input_base__WEBPACK_IMPORTED_MODULE_0__["InputBase"] {
 }
 SliderComponent.ɵfac = function SliderComponent_Factory(t) { return ɵSliderComponent_BaseFactory(t || SliderComponent); };
@@ -1444,8 +1444,8 @@ function CheckboxComponent_ng_container_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1, 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
 } }
-const _c1 = [[["", "swapControl", ""], ["", "swap-control", ""]], [["span"]], [["output"]]];
-const _c2 = ["[swapControl],[swap-control]", "span", "output"];
+const _c1 = [[["", "swap-control", ""], ["", "swap-control", ""]], [["span"]], [["output"]]];
+const _c2 = ["[swap-control],[swap-control]", "span", "output"];
 class CheckboxComponent extends _input_base__WEBPACK_IMPORTED_MODULE_0__["InputBase"] {
 }
 CheckboxComponent.ɵfac = function CheckboxComponent_Factory(t) { return ɵCheckboxComponent_BaseFactory(t || CheckboxComponent); };
@@ -1921,12 +1921,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckboxContainer", function() { return CheckboxContainer; });
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/forms */ "s7LF");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "8Y7J");
-/* harmony import */ var _libs_swap_forms_src_lib_components_selection_checkbox_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../libs/swap/forms/src/lib/components/selection/checkbox.component */ "TU54");
-/* harmony import */ var _libs_swap_forms_src_lib_directives_control_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../libs/swap/forms/src/lib/directives/control.directive */ "ARs9");
-/* harmony import */ var _libs_swap_forms_src_lib_directives_checkbox_group_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../libs/swap/forms/src/lib/directives/checkbox-group.directive */ "p29b");
+/* harmony import */ var _libs_swap_forms_src_lib_directives_checkbox_group_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../libs/swap/forms/src/lib/directives/checkbox-group.directive */ "p29b");
+/* harmony import */ var _libs_swap_forms_src_lib_components_selection_checkbox_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../libs/swap/forms/src/lib/components/selection/checkbox.component */ "TU54");
+/* harmony import */ var _libs_swap_forms_src_lib_directives_control_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../libs/swap/forms/src/lib/directives/control.directive */ "ARs9");
 /* harmony import */ var _components_form_footer_form_footer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/form-footer/form-footer.component */ "b9dF");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "SVse");
-
 
 
 
@@ -1941,8 +1939,12 @@ class CheckboxContainer {
             one: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].requiredTrue]],
             two: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].requiredTrue]],
             group: this.fb.group({
-                one: [],
-                two: [],
+                c1: [true],
+                c2: [false],
+                c3: [true],
+                c4: [false],
+                c5: [true],
+                c6: [false],
             }),
         });
     }
@@ -1957,55 +1959,61 @@ class CheckboxContainer {
     }
 }
 CheckboxContainer.ɵfac = function CheckboxContainer_Factory(t) { return new (t || CheckboxContainer)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormBuilder"])); };
-CheckboxContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CheckboxContainer, selectors: [["ng-component"]], decls: 29, vars: 4, consts: [["id", "swap", 3, "formGroup"], ["swap-checkbox", ""], ["type", "checkbox", "swapControl", "", "formControlName", "one"], ["type", "checkbox", "swapControl", "", "formControlName", "two"], ["formGroupName", "group", 1, "mt-24px"], [1, "swap-checkbox"], ["type", "checkbox", "aria-controls", "label-1 label-2", "swap-checkbox-group", ""], ["swap-checkbox", "", 1, "ml-12px"], ["type", "checkbox", "id", "label-1", "swap-control", "", "formControlName", "one"], ["type", "checkbox", "id", "label-2", "swap-control", "", "formControlName", "two"], ["swap-form", "swap"]], template: function CheckboxContainer_Template(rf, ctx) { if (rf & 1) {
+CheckboxContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CheckboxContainer, selectors: [["ng-component"]], decls: 34, vars: 1, consts: [["id", "swap", 3, "formGroup"], ["formGroupName", "group"], [1, "swap-checkbox"], ["type", "checkbox", "aria-controls", "label1 label2 label3 label4 label5 label6", "swap-checkbox-group", ""], ["swap-checkbox", "", 1, "ml-12px"], ["type", "checkbox", "id", "label1", "swap-control", "", "formControlName", "c1"], ["type", "checkbox", "id", "label2", "swap-control", "", "formControlName", "c2"], ["type", "checkbox", "id", "label3", "swap-control", "", "formControlName", "c3"], ["type", "checkbox", "id", "label4", "swap-control", "", "formControlName", "c4"], ["type", "checkbox", "id", "label5", "swap-control", "", "formControlName", "c5"], ["type", "checkbox", "id", "label6", "swap-control", "", "formControlName", "c6"], ["swap-form", "swap"]], template: function CheckboxContainer_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "label", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "One");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "fieldset", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "legend");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Group");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "input", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "label", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "label", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "input", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "Two");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "Controlador");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](8, "input", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "fieldset", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "legend");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Group");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](8, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "label", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Label 1");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "label", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](13, "input", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "input", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "label", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Todos");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Label 2");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](16, "input", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](16, "hr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "label", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "label", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "Labem 1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "Label 3");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](20, "input", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](20, "input", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "label", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "label", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "Label 2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "Label 4");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](24, "input", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](24, "input", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "label", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27, "Label 5");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](28, "input", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "label", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31, "Label 6");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](32, "input", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](25, "footer", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "pre");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](28, "json");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](33, "footer", 11);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.form);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](28, 2, ctx.form.value));
-    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _libs_swap_forms_src_lib_components_selection_checkbox_component__WEBPACK_IMPORTED_MODULE_2__["CheckboxComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["CheckboxControlValueAccessor"], _libs_swap_forms_src_lib_directives_control_directive__WEBPACK_IMPORTED_MODULE_3__["ControlDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupName"], _libs_swap_forms_src_lib_directives_checkbox_group_directive__WEBPACK_IMPORTED_MODULE_4__["CheckboxGroupDirective"], _components_form_footer_form_footer_component__WEBPACK_IMPORTED_MODULE_5__["FormFooterComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__["JsonPipe"]], encapsulation: 2 });
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupName"], _libs_swap_forms_src_lib_directives_checkbox_group_directive__WEBPACK_IMPORTED_MODULE_2__["CheckboxGroupDirective"], _libs_swap_forms_src_lib_components_selection_checkbox_component__WEBPACK_IMPORTED_MODULE_3__["CheckboxComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["CheckboxControlValueAccessor"], _libs_swap_forms_src_lib_directives_control_directive__WEBPACK_IMPORTED_MODULE_4__["ControlDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _components_form_footer_form_footer_component__WEBPACK_IMPORTED_MODULE_5__["FormFooterComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -2055,7 +2063,7 @@ class TextfieldContainer {
     }
 }
 TextfieldContainer.ɵfac = function TextfieldContainer_Factory(t) { return new (t || TextfieldContainer)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormBuilder"])); };
-TextfieldContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: TextfieldContainer, selectors: [["ng-component"]], decls: 28, vars: 5, consts: [["id", "swap", 3, "formGroup"], ["tabs", "swapTabs"], ["tabTitle", "Tab 1"], ["swap-textfield", "", "standard", ""], ["type", "text", "swapControl", "", "formControlName", "cpf", "swap-mask", "DDD.DDD.DDD-DD"], ["tabTitle", "Tab 2", 3, "active"], ["swap-textfield", "", "filled", ""], ["type", "text", "swapControl", "", "formControlName", "price", "swap-currency", ""], ["tabTitle", "Tab 3"], ["swap-textfield", "", "outlined", ""], ["type", "text", "swapControl", "", "formControlName", "phone", "swap-mask", "(DD) DDDDD-DDDD"], ["swap-form", "swap"]], template: function TextfieldContainer_Template(rf, ctx) { if (rf & 1) {
+TextfieldContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: TextfieldContainer, selectors: [["ng-component"]], decls: 28, vars: 5, consts: [["id", "swap", 3, "formGroup"], ["tabs", "swapTabs"], ["tabTitle", "Tab 1"], ["swap-textfield", "", "standard", ""], ["type", "text", "swap-control", "", "formControlName", "cpf", "swap-mask", "DDD.DDD.DDD-DD"], ["tabTitle", "Tab 2", 3, "active"], ["swap-textfield", "", "filled", ""], ["type", "text", "swap-control", "", "formControlName", "price", "swap-currency", ""], ["tabTitle", "Tab 3"], ["swap-textfield", "", "outlined", ""], ["type", "text", "swap-control", "", "formControlName", "phone", "swap-mask", "(DD) DDDDD-DDDD"], ["swap-form", "swap"]], template: function TextfieldContainer_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "swap-tabs", null, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "swap-tab", 2);
@@ -2259,30 +2267,34 @@ class CheckboxGroupDirective {
         this.element = element;
         this.renderer = renderer;
         this.container = container;
+        /**
+         * Usado para manter o observable ativo
+         * enquanto temos ciclo de vida do componente
+         *
+         * @private
+         */
         this.destroy = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
-        this.history = [];
+        /**
+         * Usado para manter o último estado misto
+         * em memória para retorno posterior
+         *
+         * @private
+         * @type {Record<string, boolean>}
+         */
+        this.lastState = null;
     }
     /**
-     * Controle do checkbox group baseado
-     * em alterações de controles filhos.
+     * Checkboxes controlados
+     *
+     * A partir de alterações individuais nos checkboxes
+     * alteramos o estado do controlador para quando:
+     *
+     * - Todos marcados: marcado
+     * - Todos desmarcados: desmarcado
+     * - Partialmente marcados: indeterminado / Misto
      */
     ngOnInit() {
         var _a;
-        if (this.element) {
-            console.log(this.element.nativeElement.parentElement.nextSibling);
-        }
-        var treeWalker = document.createTreeWalker(this.element.nativeElement.parentElement.nextSibling, NodeFilter.SHOW_ELEMENT, {
-            acceptNode: function (node) {
-                return NodeFilter.FILTER_ACCEPT;
-            },
-        });
-        var nodeList = [];
-        var currentNode = treeWalker.currentNode;
-        while (currentNode) {
-            nodeList.push(currentNode);
-            currentNode = treeWalker.nextSibling();
-        }
-        console.log(this.element.nativeElement.closest('input').nextElementSibling);
         if ((_a = this.container) === null || _a === void 0 ? void 0 : _a.control) {
             this.container.valueChanges
                 .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy))
@@ -2294,28 +2306,70 @@ class CheckboxGroupDirective {
         }
     }
     /**
-     * Controle dos filhos baseado em
-     * alterações do checkbox group.
+     * Checkbox controlador
+     *
+     * Escutando alterações do checkbox controlador
+     * é possível manter em memória o estado inicial dos
+     * checkboxes controlados para alternar entre os estados
+     * marcados / desmarcados, então retornar ao estado inicial.
      */
     onChange({ checked }) {
         var _a;
         this.updateProperty('indeterminate', false);
         if ((_a = this.container) === null || _a === void 0 ? void 0 : _a.control) {
-            this.toggleGroup(this.container.control, checked);
+            if (!this.lastState && checked) {
+                this.lastState = this.container.value;
+                this.toggleGroup(this.container.control, checked);
+            }
+            else {
+                if (this.lastState && !checked) {
+                    this.toggleGroup(this.container.control, checked);
+                }
+                else {
+                    this.container.control.patchValue(this.lastState);
+                    this.lastState = null;
+                }
+            }
         }
     }
+    /**
+     * Percorre checkboxes alterando seus estados
+     *
+     * @param {FormGroup} group
+     * @param {boolean} checked
+     */
     toggleGroup(group, checked) {
         Object.values(group.controls).map((c) => c.setValue(checked));
     }
+    /**
+     * Analisa checkboxes para determinar se todos
+     * estão marcados, desmarcados ou misto, retornando:
+     *
+     * - Todos marcados: true
+     * - Todos desmarcados: false
+     * - Misto: null
+     *
+     * @param {Record<string, boolean>} value
+     */
     getState(value) {
         const values = Object.values(value);
         const some = values.some((value) => value);
         const all = values.every((value) => value);
         return all ? all : some ? null : !!some;
     }
+    /**
+     * Altera o atributo do elemento no dom
+     *
+     * @private
+     * @param {('checked' | 'indeterminate')} property
+     * @param {boolean} value
+     */
     updateProperty(property, value) {
         this.renderer.setProperty(this.element.nativeElement, property, value);
     }
+    /**
+     * Completa o subject e finaliza o observable
+     */
     ngOnDestroy() {
         this.destroy.next();
         this.destroy.complete();
@@ -2488,8 +2542,8 @@ function RadioComponent_ng_container_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1, 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
 } }
-const _c1 = [[["", "swapControl", ""], ["", "swap-control", ""]], [["span"]], [["output"]]];
-const _c2 = ["[swapControl],[swap-control]", "span", "output"];
+const _c1 = [[["", "swap-control", ""], ["", "swap-control", ""]], [["span"]], [["output"]]];
+const _c2 = ["[swap-control],[swap-control]", "span", "output"];
 class RadioComponent extends _input_base__WEBPACK_IMPORTED_MODULE_0__["InputBase"] {
 }
 RadioComponent.ɵfac = function RadioComponent_Factory(t) { return ɵRadioComponent_BaseFactory(t || RadioComponent); };
@@ -2699,8 +2753,8 @@ function TextfieldComponent_ng_container_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1, 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
 } }
-const _c1 = [[["", "swapControl", ""], ["", "swap-control", ""]], [["span"]], [["output"]]];
-const _c2 = ["[swapControl],[swap-control]", "span", "output"];
+const _c1 = [[["", "swap-control", ""], ["", "swap-control", ""]], [["span"]], [["output"]]];
+const _c2 = ["[swap-control],[swap-control]", "span", "output"];
 class TextfieldComponent extends _input_base__WEBPACK_IMPORTED_MODULE_0__["InputBase"] {
 }
 TextfieldComponent.ɵfac = function TextfieldComponent_Factory(t) { return ɵTextfieldComponent_BaseFactory(t || TextfieldComponent); };
