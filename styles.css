@@ -1,0 +1,1286 @@
+/* You can add global styles to this file, and also import other style files */
+.cdk-overlay-container,.cdk-global-overlay-wrapper{pointer-events:none;top:0;left:0;height:100%;width:100%}
+.cdk-overlay-container{position:fixed;z-index:1000}
+.cdk-overlay-container:empty{display:none}
+.cdk-global-overlay-wrapper{display:flex;position:absolute;z-index:1000}
+.cdk-overlay-pane{position:absolute;pointer-events:auto;box-sizing:border-box;z-index:1000;display:flex;max-width:100%;max-height:100%}
+.cdk-overlay-backdrop{position:absolute;top:0;bottom:0;left:0;right:0;z-index:1000;pointer-events:auto;-webkit-tap-highlight-color:transparent;transition:opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);opacity:0}
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing{opacity:1}
+.cdk-high-contrast-active .cdk-overlay-backdrop.cdk-overlay-backdrop-showing{opacity:.6}
+.cdk-overlay-dark-backdrop{background:rgba(0,0,0,.32)}
+.cdk-overlay-transparent-backdrop,.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing{opacity:0}
+.cdk-overlay-connected-position-bounding-box{position:absolute;z-index:1000;display:flex;flex-direction:column;min-width:1px;min-height:1px}
+.cdk-global-scrollblock{position:fixed;width:100%;overflow-y:scroll}
+label[swap-textfield] {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  max-height: 56px;
+  margin-bottom: 24px;
+  padding-top: 6px;
+}
+label[swap-textfield][filled] {
+  /* Input, Textarea */
+  /* Span */
+  /* Underline */
+  /* Hover */
+  /* Placeholder-shown */
+  /* Focus */
+  /* Disabled */
+}
+label[swap-textfield][filled] > input,
+label[swap-textfield][filled] > textarea {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  border-top: solid 24px transparent;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.6);
+  border-radius: 4px 4px 0 0;
+  padding: 0 12px 7px;
+  width: 100%;
+  height: inherit;
+  color: rgba(255, 255, 255, 0.87);
+  -webkit-text-fill-color: currentColor;
+  /* Safari */
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: none;
+  /* Firefox */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  caret-color: #2159f3;
+  transition: border-bottom 0.2s, background-color 0.2s;
+}
+label[swap-textfield][filled] > input + span,
+label[swap-textfield][filled] > textarea + span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  box-sizing: border-box;
+  padding: 7px 12px 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 75%;
+  line-height: 18px;
+  pointer-events: none;
+  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+label[swap-textfield][filled] > input + span::after,
+label[swap-textfield][filled] > textarea + span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #2159f3;
+  transform-origin: bottom center;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+label[swap-textfield][filled]:hover > input, label[swap-textfield][filled]:hover > textarea {
+  border-bottom-color: rgba(255, 255, 255, 0.87);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+label[swap-textfield][filled] > input:not(:focus):placeholder-shown + span,
+label[swap-textfield][filled] > textarea:not(:focus):placeholder-shown + span {
+  font-size: inherit;
+  line-height: 48px;
+}
+label[swap-textfield][filled] > input:focus,
+label[swap-textfield][filled] > textarea:focus {
+  outline: none;
+}
+label[swap-textfield][filled] > input:focus + span,
+label[swap-textfield][filled] > textarea:focus + span {
+  color: #2159f3;
+}
+label[swap-textfield][filled] > input:focus + span::after,
+label[swap-textfield][filled] > textarea:focus + span::after {
+  transform: scale(1);
+}
+label[swap-textfield][filled] > input:disabled,
+label[swap-textfield][filled] > textarea:disabled {
+  border-bottom-color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.38);
+  background-color: rgba(255, 255, 255, 0.24);
+}
+label[swap-textfield][filled] > input:disabled + span,
+label[swap-textfield][filled] > textarea:disabled + span {
+  color: rgba(255, 255, 255, 0.38);
+}
+label[swap-textfield][outlined] {
+  /* Input, Textarea */
+  /* Span */
+  /* Corners */
+  /* Hover */
+  /* Focus */
+  /* Disabled */
+}
+label[swap-textfield][outlined] > input,
+label[swap-textfield][outlined] > textarea {
+  box-sizing: border-box;
+  margin: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent rgba(33, 89, 243, 0.6) rgba(33, 89, 243, 0.6);
+  border-radius: 4px;
+  padding: 15px 13px 15px;
+  width: 100%;
+  height: inherit;
+  color: rgba(255, 255, 255, 0.87);
+  -webkit-text-fill-color: currentColor;
+  /* Safari */
+  background-color: transparent;
+  box-shadow: inset 1px 0 transparent, inset -1px 0 transparent, inset 0 -1px transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  caret-color: #2159f3;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+label[swap-textfield][outlined] > input:not(:focus):placeholder-shown,
+label[swap-textfield][outlined] > textarea:not(:focus):placeholder-shown {
+  border-top-color: rgba(33, 89, 243, 0.6);
+}
+label[swap-textfield][outlined] > input + span,
+label[swap-textfield][outlined] > textarea + span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  max-height: 100%;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 75%;
+  line-height: 15px;
+  cursor: text;
+  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+label[swap-textfield][outlined] > input:not(:focus):placeholder-shown + span,
+label[swap-textfield][outlined] > textarea:not(:focus):placeholder-shown + span {
+  font-size: inherit;
+  line-height: 68px;
+}
+label[swap-textfield][outlined] > input + span::before,
+label[swap-textfield][outlined] > input + span::after,
+label[swap-textfield][outlined] > textarea + span::before,
+label[swap-textfield][outlined] > textarea + span::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  margin-top: 6px;
+  border-top: solid 1px rgba(33, 89, 243, 0.6);
+  min-width: 10px;
+  height: 8px;
+  pointer-events: none;
+  box-shadow: inset 0 1px transparent;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+label[swap-textfield][outlined] > input + span::before,
+label[swap-textfield][outlined] > textarea + span::before {
+  margin-right: 4px;
+  border-left: solid 1px transparent;
+  border-radius: 4px 0;
+}
+label[swap-textfield][outlined] > input + span::after,
+label[swap-textfield][outlined] > textarea + span::after {
+  flex-grow: 1;
+  margin-left: 4px;
+  border-right: solid 1px transparent;
+  border-radius: 0 4px;
+}
+label[swap-textfield][outlined] > input:not(:focus):placeholder-shown + span::before,
+label[swap-textfield][outlined] > textarea:not(:focus):placeholder-shown + span::before,
+label[swap-textfield][outlined] > input:not(:focus):placeholder-shown + span::after,
+label[swap-textfield][outlined] > textarea:not(:focus):placeholder-shown + span::after {
+  border-top-color: transparent;
+}
+label[swap-textfield][outlined]:hover > input, label[swap-textfield][outlined]:hover > textarea {
+  border-color: transparent rgba(33, 89, 243, 0.87) rgba(33, 89, 243, 0.87);
+}
+label[swap-textfield][outlined]:hover > input + span::before, label[swap-textfield][outlined]:hover > textarea + span::before, label[swap-textfield][outlined]:hover > input + span::after, label[swap-textfield][outlined]:hover > textarea + span::after {
+  border-top-color: rgba(33, 89, 243, 0.87);
+}
+label[swap-textfield][outlined]:hover > input:not(:focus):placeholder-shown, label[swap-textfield][outlined]:hover > textarea:not(:focus):placeholder-shown {
+  border-color: rgba(33, 89, 243, 0.87);
+}
+label[swap-textfield][outlined] > input:focus,
+label[swap-textfield][outlined] > textarea:focus {
+  border-color: transparent #2159f3 #2159f3;
+  box-shadow: inset 1px 0 #2159f3, inset -1px 0 #2159f3, inset 0 -1px #2159f3;
+  outline: none;
+}
+label[swap-textfield][outlined] > input:focus + span,
+label[swap-textfield][outlined] > textarea:focus + span {
+  color: #2159f3;
+}
+label[swap-textfield][outlined] > input:focus + span::before,
+label[swap-textfield][outlined] > input:focus + span::after,
+label[swap-textfield][outlined] > textarea:focus + span::before,
+label[swap-textfield][outlined] > textarea:focus + span::after {
+  border-top-color: #2159f3 !important;
+  box-shadow: inset 0 1px #2159f3;
+}
+label[swap-textfield][outlined] > input:disabled,
+label[swap-textfield][outlined] > input:disabled + span,
+label[swap-textfield][outlined] > textarea:disabled,
+label[swap-textfield][outlined] > textarea:disabled + span {
+  border-color: transparent white white !important;
+  color: rgba(255, 255, 255, 0.38);
+  pointer-events: none;
+}
+label[swap-textfield][outlined] > input:disabled + span::before,
+label[swap-textfield][outlined] > input:disabled + span::after,
+label[swap-textfield][outlined] > textarea:disabled + span::before,
+label[swap-textfield][outlined] > textarea:disabled + span::after {
+  border-top-color: white !important;
+}
+label[swap-textfield][outlined] > input:disabled:placeholder-shown,
+label[swap-textfield][outlined] > input:disabled:placeholder-shown + span,
+label[swap-textfield][outlined] > textarea:disabled:placeholder-shown,
+label[swap-textfield][outlined] > textarea:disabled:placeholder-shown + span {
+  border-top-color: white !important;
+}
+label[swap-textfield][outlined] > input:disabled:placeholder-shown + span::before,
+label[swap-textfield][outlined] > input:disabled:placeholder-shown + span::after,
+label[swap-textfield][outlined] > textarea:disabled:placeholder-shown + span::before,
+label[swap-textfield][outlined] > textarea:disabled:placeholder-shown + span::after {
+  border-top-color: transparent !important;
+}
+label[swap-textfield][standard] {
+  /* Input, Textarea */
+  /* Span */
+  /* Underline */
+  /* Hover */
+  /* Placeholder-shown */
+  /* Focus */
+  /* Disabled */
+}
+label[swap-textfield][standard] > input,
+label[swap-textfield][standard] > textarea {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  border-top: solid 24px transparent;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.6);
+  padding: 0 0 7px;
+  width: 100%;
+  height: inherit;
+  color: rgba(255, 255, 255, 0.87);
+  -webkit-text-fill-color: currentColor;
+  /* Safari */
+  background-color: transparent;
+  box-shadow: none;
+  /* Firefox */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  caret-color: white;
+  transition: border-bottom 0.2s, background-color 0.2s;
+}
+label[swap-textfield][standard] > input + span,
+label[swap-textfield][standard] > textarea + span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  box-sizing: border-box;
+  padding: 7px 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 75%;
+  line-height: 18px;
+  pointer-events: none;
+  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+label[swap-textfield][standard] > input + span::after,
+label[swap-textfield][standard] > textarea + span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #2159f3;
+  transform-origin: bottom center;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+label[swap-textfield][standard]:hover > input, label[swap-textfield][standard]:hover > textarea {
+  border-bottom-color: rgba(255, 255, 255, 0.87);
+}
+label[swap-textfield][standard] > input:not(:focus):placeholder-shown + span,
+label[swap-textfield][standard] > textarea:not(:focus):placeholder-shown + span {
+  font-size: inherit;
+  line-height: 56px;
+}
+label[swap-textfield][standard] > input:focus,
+label[swap-textfield][standard] > textarea:focus {
+  outline: none;
+}
+label[swap-textfield][standard] > input:focus + span,
+label[swap-textfield][standard] > textarea:focus + span {
+  color: #2159f3;
+}
+label[swap-textfield][standard] > input:focus + span::after,
+label[swap-textfield][standard] > textarea:focus + span::after {
+  transform: scale(1);
+}
+label[swap-textfield][standard] > input:disabled,
+label[swap-textfield][standard] > textarea:disabled {
+  border-bottom-color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.38);
+}
+label[swap-textfield][standard] > input:disabled + span,
+label[swap-textfield][standard] > textarea:disabled + span {
+  color: rgba(255, 255, 255, 0.38);
+}
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .seek-textfield-filled > input,
+.seek-textfield-filled > input + span,
+.seek-textfield-filled > input + span::after,
+.seek-textfield-filled > textarea,
+.seek-textfield-filled > textarea + span,
+.seek-textfield-filled > textarea + span::after {
+      transition-duration: 0.1s;
+    }
+  }
+}
+label.swap-checkbox,
+label[swap-checkbox] {
+  z-index: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(33, 89, 243, 0.87);
+  font-size: 16px;
+  line-height: 1.5;
+  /* Box */
+  /* Span */
+  /* Highlight */
+  /* Check Mark */
+  /* Checked, Indeterminate */
+  /* Hover, Focus */
+  /* Active */
+  /* Disabled */
+}
+label.swap-checkbox > input,
+label[swap-checkbox] > input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: 1;
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  margin: 3px 1px;
+  border: solid 2px;
+  /* Safari */
+  border-color: rgba(33, 89, 243, 0.6);
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+label.swap-checkbox > input + span,
+label[swap-checkbox] > input + span {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: 30px;
+  width: inherit;
+  cursor: pointer;
+}
+label.swap-checkbox > input + span::before,
+label[swap-checkbox] > input + span::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #2159f3;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+}
+label.swap-checkbox > input + span::after,
+label[swap-checkbox] > input + span::after {
+  content: "";
+  z-index: 1;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  box-sizing: content-box;
+  width: 10px;
+  height: 5px;
+  border: solid 2px transparent;
+  border-right-width: 0;
+  border-top-width: 0;
+  pointer-events: none;
+  transform: translate(3px, 4px) rotate(-45deg);
+  transition: border-color 0.2s;
+}
+label.swap-checkbox > input:checked,
+label.swap-checkbox > input:indeterminate,
+label[swap-checkbox] > input:checked,
+label[swap-checkbox] > input:indeterminate {
+  border-color: #2159f3;
+  background-color: #2159f3;
+}
+label.swap-checkbox > input:checked + span::before,
+label.swap-checkbox > input:indeterminate + span::before,
+label[swap-checkbox] > input:checked + span::before,
+label[swap-checkbox] > input:indeterminate + span::before {
+  background-color: #2159f3;
+}
+label.swap-checkbox > input:checked + span::after,
+label.swap-checkbox > input:indeterminate + span::after,
+label[swap-checkbox] > input:checked + span::after,
+label[swap-checkbox] > input:indeterminate + span::after {
+  border-color: white;
+}
+label.swap-checkbox > input:indeterminate + span::after,
+label[swap-checkbox] > input:indeterminate + span::after {
+  border-left-width: 0;
+  transform: translate(4px, 3px);
+}
+label.swap-checkbox label[swap-checkbox]:hover > input + span::before,
+label[swap-checkbox] label[swap-checkbox]:hover > input + span::before {
+  opacity: 0.04;
+}
+label.swap-checkbox > input:focus + span::before,
+label[swap-checkbox] > input:focus + span::before {
+  opacity: 0.12;
+}
+label.swap-checkbox label[swap-checkbox]:hover > input:focus + span::before,
+label[swap-checkbox] label[swap-checkbox]:hover > input:focus + span::before {
+  opacity: 0.16;
+}
+label.swap-checkbox label[swap-checkbox]:active > input,
+label.swap-checkbox label[swap-checkbox]:active:hover > input,
+label[swap-checkbox] label[swap-checkbox]:active > input,
+label[swap-checkbox] label[swap-checkbox]:active:hover > input {
+  border-color: #2159f3;
+}
+label.swap-checkbox label[swap-checkbox]:active > input:checked,
+label[swap-checkbox] label[swap-checkbox]:active > input:checked {
+  border-color: transparent;
+  background-color: rgba(33, 89, 243, 0.6);
+}
+label.swap-checkbox label[swap-checkbox]:active > input + span::before,
+label[swap-checkbox] label[swap-checkbox]:active > input + span::before {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+}
+label.swap-checkbox > input:disabled,
+label[swap-checkbox] > input:disabled {
+  border-color: rgba(33, 89, 243, 0.38);
+  cursor: initial;
+}
+label.swap-checkbox > input:checked:disabled,
+label.swap-checkbox > input:indeterminate:disabled,
+label[swap-checkbox] > input:checked:disabled,
+label[swap-checkbox] > input:indeterminate:disabled {
+  border-color: transparent;
+  background-color: rgba(33, 89, 243, 0.38);
+}
+label.swap-checkbox > input:disabled + span,
+label[swap-checkbox] > input:disabled + span {
+  color: rgba(255, 255, 255, 0.38);
+  cursor: initial;
+}
+label.swap-checkbox > input + span,
+label[swap-checkbox] > input + span {
+  color: white;
+}
+label.swap-checkbox > input:disabled + span::before,
+label[swap-checkbox] > input:disabled + span::before {
+  opacity: 0;
+  transform: scale(0);
+}
+@media (max-width: 768px) {
+  label.swap-checkbox,
+label[swap-checkbox] {
+    display: flex;
+    align-items: center;
+  }
+  label.swap-checkbox > output,
+label[swap-checkbox] > output {
+    padding: 0 10px;
+    font-size: 80%;
+  }
+}
+swap-select {
+  position: relative;
+  min-width: 5.625rem;
+  padding: 0.5rem 0 1.5rem;
+}
+swap-select .input {
+  position: relative;
+  margin: 0;
+  outline: 0;
+}
+swap-select .input input {
+  width: 100%;
+  height: 1.5rem;
+  line-height: 1.3125rem;
+  border: none;
+  border-bottom: 1px solid white;
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: hidden;
+  color: #2159f3;
+  margin-top: 4px;
+  padding: 4px 0 4px 0px;
+  outline: 0;
+  cursor: pointer;
+  font-size: inherit;
+}
+swap-select .input input:focus {
+  border-bottom: 2px solid white;
+}
+swap-select .input input:disabled {
+  cursor: default;
+  color: #93a1aa;
+  border-bottom: solid 1px #93a1aa;
+}
+swap-select .input input:disabled + .panel-arrow {
+  color: #93a1aa;
+}
+swap-select .input .panel-arrow {
+  position: absolute;
+  color: inherit;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+swap-select .input .panel-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+swap-select .input.required label:after {
+  color: #f46e47;
+  content: "*";
+  position: relative;
+  left: 5px;
+  bottom: 5px;
+}
+.swap-options-container {
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+  display: block;
+  overflow: auto;
+}
+swap-option {
+  display: block;
+  color: #333;
+  padding: 0 0.875rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-family: sans-serif;
+  background-color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+swap-option::after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  transition: border-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+}
+swap-option.selected {
+  color: white;
+  background-color: #2159f3;
+}
+swap-option.selected:hover, swap-option.selected.active {
+  background-color: #2159f3;
+}
+@media screen and (-ms-high-contrast: active) {
+  swap-option.selected:hover, swap-option.selected.active {
+    background-color: #2159f3;
+  }
+}
+swap-option:hover, swap-option.active {
+  outline: none;
+}
+swap-option:hover::after, swap-option.active::after {
+  color: white;
+  background-color: rgba(33, 89, 243, 0.12);
+}
+@media screen and (-ms-high-contrast: active) {
+  swap-option:hover, swap-option.active {
+    background-color: #2159f3;
+  }
+}
+swap-option.disabled {
+  color: #93a1aa;
+  cursor: auto;
+}
+swap-option.disabled:hover, swap-option.disabled:focus {
+  outline: none;
+  background-color: #fff;
+}
+@media screen and (-ms-high-contrast: active) {
+  swap-option.disabled:hover, swap-option.disabled:focus {
+    background-color: #fff;
+  }
+}
+label[swap-radio] {
+  z-index: 0;
+  position: relative;
+  display: inline-flex;
+  color: rgba(33, 89, 243, 0.87);
+  font-size: 16px;
+  line-height: 1.5;
+  /* Circle */
+  /* Span */
+  /* Highlight */
+  /* Check Mark */
+  /* Checked */
+  /* Hover, Focus */
+  /* Active */
+  /* Disabled */
+}
+label[swap-radio] > input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: 1;
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  margin: 2px 0;
+  border: solid 2px;
+  /* Safari */
+  border-color: rgba(33, 89, 243, 0.6);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+label[swap-radio] > input + span {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: 30px;
+  width: inherit;
+  cursor: pointer;
+}
+label[swap-radio] > input + span::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #2159f3;
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+}
+label[swap-radio] > input + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #2159f3;
+  transform: translate(5px, 5px) scale(0);
+  transition: transform 0.2s;
+}
+label[swap-radio] > input:checked {
+  border-color: #2159f3;
+}
+label[swap-radio] > input:checked + span::before {
+  background-color: #2159f3;
+}
+label[swap-radio] > input:checked + span::after {
+  transform: translate(5px, 5px) scale(1);
+  background-color: white;
+}
+label[swap-radio]:hover > input + span::before {
+  transform: scale(1);
+  opacity: 0.04;
+}
+label[swap-radio] > input:focus + span::before {
+  transform: scale(1);
+  opacity: 0.12;
+}
+label[swap-radio]:hover > input:focus + span::before {
+  transform: scale(1);
+  opacity: 0.16;
+}
+label[swap-radio]:active > input {
+  background-color: #2159f3;
+}
+label[swap-radio]:active > input + span::before, label[swap-radio]:active:hover > input + span::before {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+}
+label[swap-radio] > input:disabled {
+  border-color: rgba(33, 89, 243, 0.38);
+  cursor: initial;
+}
+label[swap-radio] > input:disabled + span {
+  color: rgba(33, 89, 243, 0.38);
+  cursor: initial;
+}
+label[swap-radio] > input:disabled + span::before {
+  opacity: 0;
+  transform: scale(0);
+}
+label[swap-radio] > input:disabled + span::after {
+  background-color: currentColor;
+}
+label[swap-radio] > input + span {
+  color: white;
+}
+@media (max-width: 768px) {
+  label[swap-radio] {
+    display: flex;
+    align-items: center;
+  }
+  label[swap-radio] > output {
+    padding: 0 10px;
+    font-size: 80%;
+  }
+}
+label[swap-slider] {
+  display: inline-block;
+  min-width: 200px;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  /* Input */
+  /* Without Span */
+  /* Span */
+  /* Focus */
+  /* Disabled */
+  /* Webkit | Track */
+  /* Webkit | Thumb */
+  /* Webkit | Hover, Focus */
+  /* Webkit | Active */
+  /* Webkit | Disabled */
+  /* Moz | Track */
+  /* Moz | Thumb */
+  /* Moz | Progress */
+  /* Moz | Hover, Focus */
+  /* Moz | Active */
+  /* Moz | Disabled */
+  /* MS | Track */
+  /* MS | Progress */
+  /* MS | Thumb */
+  /* MS | Hover, Focus */
+  /* MS | Active */
+  /* MS | Disabled */
+}
+label[swap-slider] > input {
+  -webkit-appearance: none;
+  position: relative;
+  top: 24px;
+  display: block;
+  margin: 0 0 -36px;
+  width: 100%;
+  height: 36px;
+  background-color: transparent;
+  cursor: pointer;
+}
+label[swap-slider] > input:last-child {
+  position: static;
+  margin: 0;
+}
+label[swap-slider] > span {
+  display: inline-block;
+  margin-bottom: 36px;
+}
+label[swap-slider] > input:focus {
+  outline: none;
+}
+label[swap-slider] > input:disabled {
+  cursor: default;
+  opacity: 0.38;
+}
+label[swap-slider] > input:disabled + span {
+  color: rgba(255, 255, 255, 0.38);
+}
+label[swap-slider] > input::-webkit-slider-runnable-track {
+  margin: 17px 0;
+  border-radius: 1px;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(33, 89, 243, 0.24);
+}
+label[swap-slider] > input::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 50%;
+  height: 2px;
+  width: 2px;
+  background-color: #2159f3;
+  transform: scale(6, 6);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+label[swap-slider]:hover > input::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.04);
+}
+label[swap-slider] > input:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
+}
+label[swap-slider]:hover > input:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.16);
+}
+label[swap-slider] > input:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.24) !important;
+}
+label[swap-slider] > input:disabled::-webkit-slider-runnable-track {
+  background-color: rgba(255, 255, 255, 0.38);
+}
+label[swap-slider] > input:disabled::-webkit-slider-thumb {
+  background-color: white;
+  color: white;
+  /* Safari */
+  box-shadow: 0 0 0 1px white !important;
+  transform: scale(4, 4);
+}
+label[swap-slider] > input::-moz-range-track {
+  margin: 17px 0;
+  border-radius: 1px;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(33, 89, 243, 0.24);
+}
+label[swap-slider] > input::-moz-range-thumb {
+  appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-radius: 50%;
+  height: 2px;
+  width: 2px;
+  background-color: #2159f3;
+  transform: scale(6, 6);
+  -moz-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+label[swap-slider] > input::-moz-range-progress {
+  border-radius: 1px;
+  height: 2px;
+  background-color: #2159f3;
+}
+label[swap-slider]:hover > input:hover::-moz-range-thumb {
+  box-shadow: 0 0 0 2px rgba(33, 89, 243, 0.04);
+}
+label[swap-slider] > input:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 2px rgba(33, 89, 243, 0.12);
+}
+label[swap-slider]:hover > input:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 2px rgba(33, 89, 243, 0.16);
+}
+label[swap-slider] > input:active::-moz-range-thumb {
+  box-shadow: 0 0 0 2px rgba(33, 89, 243, 0.24) !important;
+}
+label[swap-slider] > input:disabled::-moz-range-track {
+  background-color: rgba(255, 255, 255, 0.38);
+}
+label[swap-slider] > input:disabled::-moz-range-progress {
+  background-color: rgba(255, 255, 255, 0.87);
+}
+label[swap-slider] > input:disabled::-moz-range-thumb {
+  background-color: white;
+  box-shadow: 0 0 0 1px white !important;
+  transform: scale(4, 4);
+}
+label[swap-slider] > input::-moz-focus-outer {
+  border: none;
+}
+label[swap-slider] > input::-ms-track {
+  box-sizing: border-box;
+  margin: 17px 0;
+  border: none;
+  border-radius: 1px;
+  padding: 0 17px;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+}
+label[swap-slider] > input::-ms-fill-lower {
+  border-radius: 1px;
+  height: 2px;
+  background-color: #2159f3;
+}
+label[swap-slider] > input::-ms-fill-upper {
+  border-radius: 1px;
+  height: 2px;
+  background-color: rgba(33, 89, 243, 0.24);
+}
+label[swap-slider] > input::-ms-thumb {
+  appearance: none;
+  margin: 0 17px;
+  border: none;
+  border-radius: 50%;
+  height: 2px;
+  width: 2px;
+  background-color: #2159f3;
+  transform: scale(6, 6);
+  -ms-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+label[swap-slider]:hover > input::-ms-thumb {
+  box-shadow: 0 0 0 2px rgba(33, 89, 243, 0.04);
+}
+label[swap-slider] > input:focus::-ms-thumb {
+  box-shadow: 0 0 0 2px rgba(33, 89, 243, 0.12);
+}
+label[swap-slider]:hover > input:focus::-ms-thumb {
+  box-shadow: 0 0 0 2px rgba(33, 89, 243, 0.16);
+}
+label[swap-slider] > input:active::-ms-thumb {
+  box-shadow: 0 0 0 2px rgba(33, 89, 243, 0.24) !important;
+}
+label[swap-slider] > input:disabled::-ms-fill-lower {
+  background-color: rgba(255, 255, 255, 0.38);
+}
+label[swap-slider] > input:disabled::-ms-fill-upper {
+  background-color: rgba(255, 255, 255, 0.38);
+  opacity: 0.38;
+}
+label[swap-slider] > input:disabled::-ms-thumb {
+  background-color: white;
+  box-shadow: 0 0 0 1px white !important;
+  transform: scale(4, 4);
+}
+button[swap-button][mode=primary] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0 16px;
+  gap: 6px;
+  height: 36px;
+  min-width: 100px;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  text-overflow: ellipsis;
+  color: white;
+  background-color: #2159f3;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  line-height: normal;
+  text-transform: none;
+  border-color: rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.25), 0 2px 2px 0 rgba(0, 0, 0, 0.25), 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  /* Highlight, Ripple */
+  /* Hover, Focus */
+  /* Active */
+  /* Disabled */
+}
+button[swap-button][mode=primary]::-moz-focus-inner {
+  border: none;
+}
+button[swap-button][mode=primary]::before, button[swap-button][mode=primary]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  opacity: 0;
+}
+button[swap-button][mode=primary]::before {
+  background-color: #2159f3;
+  transition: opacity 0.2s;
+}
+button[swap-button][mode=primary]::after {
+  background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000% 10000% no-repeat;
+  transition: opacity 1s, background-size 0.5s;
+}
+button[swap-button][mode=primary]:hover, button[swap-button][mode=primary]:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
+}
+button[swap-button][mode=primary]:hover::before {
+  opacity: 0.08;
+}
+button[swap-button][mode=primary]:focus::before {
+  opacity: 0.24;
+}
+button[swap-button][mode=primary]:hover:focus::before {
+  opacity: 0.32;
+}
+button[swap-button][mode=primary]:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+button[swap-button][mode=primary]:active::after {
+  opacity: 0.32;
+  background-size: 100% 100%;
+  transition: background-size 0s;
+}
+button[swap-button][mode=primary]:disabled {
+  color: white;
+  background-color: #bccdfb;
+  box-shadow: none;
+  cursor: initial;
+}
+button[swap-button][mode=primary]:disabled::before, button[swap-button][mode=primary]:disabled::after {
+  opacity: 0;
+}
+button[swap-button][mode=secondary] {
+  margin: 0;
+  padding: 0 16px;
+  min-width: 100px;
+  height: 36px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  border: solid 1px;
+  /* Safari */
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  color: #2159f3;
+  background-color: white;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  line-height: normal;
+  text-transform: none;
+  border-color: rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.25), 0 2px 2px 0 rgba(0, 0, 0, 0.25), 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+  /* Highlight, Ripple */
+  /* Hover, Focus */
+  /* Active */
+  /* Pressed */
+  /* Disabled */
+}
+button[swap-button][mode=secondary]::-moz-focus-inner {
+  border: none;
+}
+button[swap-button][mode=secondary]::before, button[swap-button][mode=secondary]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 3px;
+  opacity: 0;
+}
+button[swap-button][mode=secondary]::before {
+  background-color: white;
+  transition: opacity 0.2s;
+}
+button[swap-button][mode=secondary]::after {
+  background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000% 10000% no-repeat;
+  transition: opacity 1s, background-size 0.5s;
+}
+button[swap-button][mode=secondary]:hover::before {
+  opacity: 0.04;
+}
+button[swap-button][mode=secondary]:focus::before {
+  opacity: 0.12;
+}
+button[swap-button][mode=secondary]:hover:focus::before {
+  opacity: 0.16;
+}
+button[swap-button][mode=secondary]:active::after {
+  opacity: 0.16;
+  background-size: 100% 100%;
+  transition: background-size 0s;
+  background-color: whitesmoke;
+  color: #2159f3;
+  border-color: rgba(0, 0, 0, 0.24);
+}
+button[swap-button][mode=secondary]:active {
+  background-color: whitesmoke;
+  color: #2159f3;
+  border-color: rgba(0, 0, 0, 0.24);
+}
+button[swap-button][mode=secondary]:disabled {
+  background-color: whitesmoke;
+  color: #bccdfb;
+  border-color: rgba(153, 153, 153, 0.24);
+  box-shadow: none;
+  cursor: initial;
+}
+button[swap-button][mode=secondary]:disabled::before, button[swap-button][mode=secondary]:disabled::after {
+  opacity: 0;
+}
+.swap-link {
+  --seek-helper-safari1: rgba($seek-primary-default-color, 0.12);
+  padding: 3px 0px;
+  border-radius: 4px 4px 0 0;
+  display: inline-flex;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  transition: background-color 0.4s, box-shadow 0.2s, color 0.2s;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  /* Hover */
+  /* Focus */
+  /* Active */
+}
+.swap-link:after {
+  content: "";
+  bottom: 0;
+  height: 1px;
+  right: 50%;
+  left: 50%;
+  border-radius: 4px;
+  position: absolute;
+  display: inline-flex;
+  background-color: white;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transform-origin: top center;
+  z-index: -1;
+}
+.swap-link:hover {
+  color: #2159f3;
+}
+.swap-link:hover:after {
+  right: 0;
+  left: 0;
+}
+.swap-link:focus {
+  background-color: var(--seek-helper-safari1);
+  box-shadow: 0 0 0 0.16em var(--seek-helper-safari1);
+  outline: none;
+}
+.swap-link:active {
+  background-color: transparent;
+  box-shadow: none;
+}
+label > output {
+  display: inline-flex;
+  line-height: 1.5;
+  color: #dd5555;
+}
+label > output svg {
+  fill: #dd5555;
+  margin-left: 6px;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+  display: block;
+  color: #f1f1f1;
+  background-color: #22282d;
+  background-image: url("/assets/banner/github.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+body form,
+body fieldset {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body fieldset {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0.13rem;
+}
+body fieldset legend {
+  padding: 0.4rem;
+}
+body hr {
+  width: 100%;
+  opacity: 0.1;
+  border-style: solid;
+}
+body .flex {
+  display: flex;
+}
+body .space-between {
+  justify-content: space-between;
+}
+body .mt-24px {
+  margin-top: 24px;
+}
+body .mr-24px {
+  margin-right: 24px;
+}
+body .mb-24px {
+  margin-bottom: 24px;
+}
+body .ml-24px {
+  margin-left: 24px;
+}
+body .mt-12px {
+  margin-top: 12px;
+}
+body .mr-12px {
+  margin-right: 12px;
+}
+body .mb-12px {
+  margin-bottom: 12px;
+}
+body .ml-12px {
+  margin-left: 12px;
+}
+
+/*# sourceMappingURL=styles.css.map*/
