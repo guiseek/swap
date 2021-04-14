@@ -134,7 +134,6 @@
       will-change: opacity;
     }
 
-    &:hover,
     &:focus-within {
       .dropdown__title {
         border-top-color: $seek-primary-default-color;

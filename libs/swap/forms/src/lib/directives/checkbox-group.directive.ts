@@ -15,9 +15,9 @@ import {
 })
 export class CheckboxGroupDirective implements OnInit, OnDestroy {
   private destroy = new Subject<void>();
-
+  private history: string[] = [];
   constructor(
-    private element: ElementRef,
+    private element: ElementRef<HTMLElement>,
     private renderer: Renderer2,
     private container: FormGroupName
   ) {}
@@ -27,6 +27,29 @@ export class CheckboxGroupDirective implements OnInit, OnDestroy {
    * em alterações de controles filhos.
    */
   ngOnInit(): void {
+    if (this.element) {
+      console.log(this.element.nativeElement.parentElement.nextSibling);
+    }
+    var treeWalker = document.createTreeWalker(
+      this.element.nativeElement.parentElement.nextSibling,
+      NodeFilter.SHOW_ELEMENT,
+      {
+        acceptNode: function (node) {
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      }
+    );
+
+    var nodeList = [];
+    var currentNode = treeWalker.currentNode;
+
+    while (currentNode) {
+      nodeList.push(currentNode);
+      currentNode = treeWalker.nextSibling();
+    }
+
+    console.log(this.element.nativeElement.closest('input').nextElementSibling);
+
     if (this.container?.control) {
       this.container.valueChanges
         .pipe(takeUntil(this.destroy))

@@ -38,7 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       { route: '/select', label: 'Select' },
       {
         route: '/',
-        label: 'Selecion',
+        label: 'Selection',
         children: [
           { route: 'radio', label: 'Radio' },
           { route: 'checkbox', label: 'Checkbox' },

@@ -12,19 +12,19 @@
     <legend>Group</legend>
 
     <label class="swap-checkbox">
-      <input type="checkbox" swap-checkbox-group />
-      <span>Parent</span>
+      <input type="checkbox" aria-controls="label-1 label-2" swap-checkbox-group />
+      <span>Todos</span>
     </label>
 
     <hr />
 
     <label swap-checkbox class="ml-12px">
-      <span>One</span>
-      <input type="checkbox" swap-control formControlName="one" />
+      <span>Labem 1</span>
+      <input type="checkbox" id="label-1" swap-control formControlName="one" />
     </label>
     <label swap-checkbox class="ml-12px">
-      <span>Two</span>
-      <input type="checkbox" swap-control formControlName="two" />
+      <span>Label 2</span>
+      <input type="checkbox" id="label-2" swap-control formControlName="two" />
     </label>
   </fieldset>
 </form>
