@@ -3,7 +3,7 @@
 
   <ng-container [ngSwitch]="input.controlType">
     <input
-      swapControl
+      swap-control
       *ngSwitchCase="'text'"
       [formControlName]="input.name"
       [id]="input.name"
@@ -11,7 +11,7 @@
     />
 
     <input
-      swapControl
+      swap-control
       *ngSwitchCase="'checkbox'"
       [formControlName]="input.name"
       [id]="input.name"
@@ -19,7 +19,7 @@
     />
 
     <textarea
-      swapControl
+      swap-control
       *ngSwitchCase="'textarea'"
       [formControlName]="input.name"
       [id]="input.name"

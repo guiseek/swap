@@ -1,34 +1,43 @@
 <form id="swap" [formGroup]="form">
-  <label swap-checkbox>
-    <span>One</span>
-    <input type="checkbox" swapControl formControlName="one" />
-  </label>
-  <label swap-checkbox>
-    <span>Two</span>
-    <input type="checkbox" swapControl formControlName="two" />
-  </label>
-
-  <fieldset formGroupName="group" class="mt-24px">
+  <fieldset formGroupName="group">
     <legend>Group</legend>
 
     <label class="swap-checkbox">
-      <input type="checkbox" aria-controls="label-1 label-2" swap-checkbox-group />
-      <span>Todos</span>
+      <input
+        type="checkbox"
+        aria-controls="label1 label2 label3 label4 label5 label6"
+        swap-checkbox-group
+      />
+      <span>Controlador</span>
     </label>
 
     <hr />
 
     <label swap-checkbox class="ml-12px">
-      <span>Labem 1</span>
-      <input type="checkbox" id="label-1" swap-control formControlName="one" />
+      <span>Label 1</span>
+      <input type="checkbox" id="label1" swap-control formControlName="c1" />
     </label>
     <label swap-checkbox class="ml-12px">
       <span>Label 2</span>
-      <input type="checkbox" id="label-2" swap-control formControlName="two" />
+      <input type="checkbox" id="label2" swap-control formControlName="c2" />
+    </label>
+    <label swap-checkbox class="ml-12px">
+      <span>Label 3</span>
+      <input type="checkbox" id="label3" swap-control formControlName="c3" />
+    </label>
+    <label swap-checkbox class="ml-12px">
+      <span>Label 4</span>
+      <input type="checkbox" id="label4" swap-control formControlName="c4" />
+    </label>
+    <label swap-checkbox class="ml-12px">
+      <span>Label 5</span>
+      <input type="checkbox" id="label5" swap-control formControlName="c5" />
+    </label>
+    <label swap-checkbox class="ml-12px">
+      <span>Label 6</span>
+      <input type="checkbox" id="label6" swap-control formControlName="c6" />
     </label>
   </fieldset>
 </form>
 
 <footer swap-form="swap"></footer>
-
-<pre>{{ form.value | json }}</pre>
