@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/swap/layout',
     '<rootDir>/apps/server',
     '<rootDir>/libs/swap/storybook',
+    '<rootDir>/libs/micro/router',
   ],
 };
