@@ -18,7 +18,8 @@
       "@swap/forms": ["libs/swap/forms/src/index.ts"],
       "@swap/forms/*": ["libs/swap/forms/*"],
       "@swap/layout": ["libs/swap/layout/src/index.ts"],
-      "@swap/swap/storybook": ["libs/swap/storybook/src/index.ts"]
+      "@swap/swap/storybook": ["libs/swap/storybook/src/index.ts"],
+      "@swap/micro/router": ["libs/micro/router/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

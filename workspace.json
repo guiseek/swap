@@ -1,6 +1,8 @@
 {
   "version": 2,
-  "cli": { "defaultCollection": "@nrwl/angular" },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
   "defaultProject": "web",
   "generators": {
     "@nrwl/web:application": {
@@ -26,7 +28,9 @@
       "unitTestRunner": "jest",
       "strict": true
     },
-    "@nrwl/angular:component": { "style": "scss" }
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
   },
   "projects": {
     "web": {
@@ -36,15 +40,22 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/web",
             "index": "apps/web/src/index.html",
             "main": "apps/web/src/main.ts",
             "polyfills": "apps/web/src/polyfills.ts",
             "tsConfig": "apps/web/tsconfig.app.json",
-            "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
-            "styles": ["apps/web/src/styles.scss"],
+            "assets": [
+              "apps/web/src/favicon.ico",
+              "apps/web/src/assets"
+            ],
+            "styles": [
+              "apps/web/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -74,18 +85,28 @@
         },
         "serve": {
           "executor": "@nrwl/web:dev-server",
-          "options": { "buildTarget": "web:build" },
+          "options": {
+            "buildTarget": "web:build"
+          },
           "configurations": {
-            "production": { "buildTarget": "web:build:production" }
+            "production": {
+              "buildTarget": "web:build:production"
+            }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/web/**/*.ts"] }
+          "options": {
+            "lintFilePatterns": [
+              "apps/web/**/*.ts"
+            ]
+          }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/web"],
+          "outputs": [
+            "coverage/apps/web"
+          ],
           "options": {
             "jestConfig": "apps/web/jest.config.js",
             "passWithNoTests": true
@@ -106,12 +127,18 @@
             "devServerTarget": "web:serve"
           },
           "configurations": {
-            "production": { "devServerTarget": "web:serve:production" }
+            "production": {
+              "devServerTarget": "web:serve:production"
+            }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/web-e2e/**/*.{js,ts}"] }
+          "options": {
+            "lintFilePatterns": [
+              "apps/web-e2e/**/*.{js,ts}"
+            ]
+          }
         }
       }
     },
@@ -129,10 +156,18 @@
             "main": "apps/app/src/main.ts",
             "polyfills": "apps/app/src/polyfills.ts",
             "tsConfig": "apps/app/tsconfig.app.json",
-            "allowedCommonJsDependencies": ["lodash"],
+            "allowedCommonJsDependencies": [
+              "lodash"
+            ],
             "aot": true,
-            "assets": ["apps/app/src/favicon.ico", "apps/app/src/CNAME", "apps/app/src/assets"],
-            "styles": ["apps/app/src/styles.scss"],
+            "assets": [
+              "apps/app/src/favicon.ico",
+              "apps/app/src/CNAME",
+              "apps/app/src/assets"
+            ],
+            "styles": [
+              "apps/app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -172,12 +207,16 @@
             "proxyConfig": "apps/app/proxy.conf.json"
           },
           "configurations": {
-            "production": { "browserTarget": "app:build:production" }
+            "production": {
+              "browserTarget": "app:build:production"
+            }
           }
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
-          "options": { "browserTarget": "app:build" }
+          "options": {
+            "browserTarget": "app:build"
+          }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -190,7 +229,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/app"],
+          "outputs": [
+            "coverage/apps/app"
+          ],
           "options": {
             "jestConfig": "apps/app/jest.config.js",
             "passWithNoTests": true
@@ -211,12 +252,18 @@
             "devServerTarget": "app:serve"
           },
           "configurations": {
-            "production": { "devServerTarget": "app:serve:production" }
+            "production": {
+              "devServerTarget": "app:serve:production"
+            }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/app-e2e/**/*.{js,ts}"] }
+          "options": {
+            "lintFilePatterns": [
+              "apps/app-e2e/**/*.{js,ts}"
+            ]
+          }
         }
       }
     },
@@ -249,7 +296,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/swap/forms"],
+          "outputs": [
+            "coverage/libs/swap/forms"
+          ],
           "options": {
             "jestConfig": "libs/swap/forms/jest.config.js",
             "passWithNoTests": true
@@ -286,7 +335,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/swap/layout"],
+          "outputs": [
+            "coverage/libs/swap/layout"
+          ],
           "options": {
             "jestConfig": "libs/swap/layout/jest.config.js",
             "passWithNoTests": true
@@ -301,12 +352,16 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/server",
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
-            "assets": ["apps/server/src/assets"]
+            "assets": [
+              "apps/server/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -324,15 +379,23 @@
         },
         "serve": {
           "executor": "@nrwl/node:execute",
-          "options": { "buildTarget": "server:build" }
+          "options": {
+            "buildTarget": "server:build"
+          }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/server/**/*.ts"] }
+          "options": {
+            "lintFilePatterns": [
+              "apps/server/**/*.ts"
+            ]
+          }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/server"],
+          "outputs": [
+            "coverage/apps/server"
+          ],
           "options": {
             "jestConfig": "apps/server/jest.config.js",
             "passWithNoTests": true
@@ -348,13 +411,21 @@
       "targets": {
         "build": {
           "executor": "@nrwl/storybook:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/swap-storybook",
-            "config": { "configFolder": "libs/swap/storybook/.storybook" }
+            "config": {
+              "configFolder": "libs/swap/storybook/.storybook"
+            }
           },
-          "configurations": { "ci": { "quiet": true } }
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -367,7 +438,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/swap/storybook"],
+          "outputs": [
+            "coverage/libs/swap/storybook"
+          ],
           "options": {
             "jestConfig": "libs/swap/storybook/jest.config.js",
             "passWithNoTests": true
@@ -378,19 +451,154 @@
           "options": {
             "uiFramework": "@storybook/angular",
             "port": 4400,
-            "config": { "configFolder": "libs/swap/storybook/.storybook" }
+            "config": {
+              "configFolder": "libs/swap/storybook/.storybook"
+            }
           },
-          "configurations": { "ci": { "quiet": true } }
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/swap-storybook",
-            "config": { "configFolder": "libs/swap/storybook/.storybook" }
+            "config": {
+              "configFolder": "libs/swap/storybook/.storybook"
+            }
           },
-          "configurations": { "ci": { "quiet": true } }
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "micro": {
+      "projectType": "application",
+      "root": "apps/micro",
+      "sourceRoot": "apps/micro/src",
+      "prefix": "swap",
+      "targets": {
+        "build": {
+          "executor": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/apps/micro",
+            "index": "apps/micro/src/index.html",
+            "main": "apps/micro/src/main.ts",
+            "polyfills": "apps/micro/src/polyfills.ts",
+            "tsConfig": "apps/micro/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/micro/src/favicon.ico",
+              "apps/micro/src/assets"
+            ],
+            "styles": [
+              "apps/micro/src/styles.scss"
+            ],
+            "scripts": ["libs/micro/router/src/dev-platform.js"]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/micro/src/environments/environment.ts",
+                  "with": "apps/micro/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "micro:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "micro:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "micro:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/micro/src/**/*.ts",
+              "apps/micro/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "micro-router": {
+      "projectType": "library",
+      "root": "libs/micro/router",
+      "sourceRoot": "libs/micro/router/src",
+      "prefix": "micro",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/micro/router/tsconfig.lib.json",
+            "project": "libs/micro/router/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/micro/router/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/micro/router/src/**/*.ts",
+              "libs/micro/router/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/micro/router"
+          ],
+          "options": {
+            "jestConfig": "libs/micro/router/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }

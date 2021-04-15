@@ -31,6 +31,8 @@
     "swap-forms": { "tags": [] },
     "swap-layout": { "tags": [] },
     "server": { "tags": [] },
-    "swap-storybook": { "tags": [] }
+    "swap-storybook": { "tags": [] },
+    "micro": { "tags": [] },
+    "micro-router": { "tags": [] }
   }
 }
