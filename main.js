@@ -2263,6 +2263,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class CheckboxGroupDirective {
+    /**
+     * Cria uma instância para CheckboxGroupDirective
+     *
+     * @param {ElementRef<HTMLElement>} element
+     * @param {Renderer2} renderer
+     * @param {FormGroupName} container
+     */
     constructor(element, renderer, container) {
         this.element = element;
         this.renderer = renderer;
@@ -2278,8 +2285,7 @@ class CheckboxGroupDirective {
          * Usado para manter o último estado misto
          * em memória para retorno posterior
          *
-         * @private
-         * @type {Record<string, boolean>}
+         * @type {CheckboxGroupValue}
          */
         this.lastState = null;
     }
@@ -2294,16 +2300,10 @@ class CheckboxGroupDirective {
      * - Partialmente marcados: indeterminado / Misto
      */
     ngOnInit() {
-        var _a;
-        if ((_a = this.container) === null || _a === void 0 ? void 0 : _a.control) {
-            this.container.valueChanges
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy))
-                .subscribe((value) => {
-                const checked = this.getState(value);
-                this.updateProperty('checked', checked || false);
-                this.updateProperty('indeterminate', checked === null);
-            });
-        }
+        this.checkState(this.container.value);
+        this.container.valueChanges
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy))
+            .subscribe((value) => this.checkState(value));
     }
     /**
      * Checkbox controlador
@@ -2312,25 +2312,22 @@ class CheckboxGroupDirective {
      * é possível manter em memória o estado inicial dos
      * checkboxes controlados para alternar entre os estados
      * marcados / desmarcados, então retornar ao estado inicial.
+     *
+     * @param {HTMLInputElement} { checked }
      */
     onChange({ checked }) {
-        var _a;
         this.updateProperty('indeterminate', false);
-        if ((_a = this.container) === null || _a === void 0 ? void 0 : _a.control) {
-            if (!this.lastState && checked) {
-                this.lastState = this.container.value;
-                this.toggleGroup(this.container.control, checked);
-            }
-            else {
-                if (this.lastState && !checked) {
-                    this.toggleGroup(this.container.control, checked);
-                }
-                else {
-                    this.container.control.patchValue(this.lastState);
-                    this.lastState = null;
-                }
-            }
+        if (this.lastState && !checked) {
+            this.toggleGroup(this.container.control, checked);
+            return;
         }
+        if (!this.lastState && checked) {
+            this.lastState = this.container.value;
+            this.toggleGroup(this.container.control, checked);
+            return;
+        }
+        this.container.control.patchValue(this.lastState);
+        this.lastState = null;
     }
     /**
      * Percorre checkboxes alterando seus estados
@@ -2342,6 +2339,18 @@ class CheckboxGroupDirective {
         Object.values(group.controls).map((c) => c.setValue(checked));
     }
     /**
+     * Altera o estado do controlador baseado em
+     * valores contidos nos checkboxes controlados
+     *
+     * @private
+     * @param {CheckboxGroupValue} value
+     */
+    checkState(value) {
+        const checked = this.getState(value);
+        this.updateProperty('checked', checked || false);
+        this.updateProperty('indeterminate', checked === null);
+    }
+    /**
      * Analisa checkboxes para determinar se todos
      * estão marcados, desmarcados ou misto, retornando:
      *
@@ -2349,19 +2358,21 @@ class CheckboxGroupDirective {
      * - Todos desmarcados: false
      * - Misto: null
      *
-     * @param {Record<string, boolean>} value
+     * @private
+     * @param {CheckboxGroupValue} value
      */
     getState(value) {
         const values = Object.values(value);
         const some = values.some((value) => value);
-        const all = values.every((value) => value);
-        return all ? all : some ? null : !!some;
+        const every = values.every((value) => value);
+        return every ? every : some ? null : some;
     }
     /**
      * Altera o atributo do elemento no dom
      *
      * @private
-     * @param {('checked' | 'indeterminate')} property
+     * @internal
+     * @param {CheckboxGroupState} property
      * @param {boolean} value
      */
     updateProperty(property, value) {
@@ -2369,6 +2380,8 @@ class CheckboxGroupDirective {
     }
     /**
      * Completa o subject e finaliza o observable
+     *
+     * @internal
      */
     ngOnDestroy() {
         this.destroy.next();

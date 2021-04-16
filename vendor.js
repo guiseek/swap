@@ -8143,7 +8143,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /**
- * @license Angular v11.2.9
+ * @license Angular v11.2.10
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -29563,7 +29563,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = new Version('11.2.9');
+const VERSION = new Version('11.2.10');
 
 /**
  * @license
@@ -34046,57 +34046,36 @@ class EventEmitter_ extends rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"] {
         super.next(value);
     }
     subscribe(observerOrNext, error, complete) {
-        let schedulerFn;
-        let errorFn = (err) => null;
-        let completeFn = () => null;
+        var _a, _b, _c;
+        let nextFn = observerOrNext;
+        let errorFn = error || (() => null);
+        let completeFn = complete;
         if (observerOrNext && typeof observerOrNext === 'object') {
-            schedulerFn = this.__isAsync ? (value) => {
-                setTimeout(() => observerOrNext.next(value));
-            } : (value) => {
-                observerOrNext.next(value);
-            };
-            if (observerOrNext.error) {
-                errorFn = this.__isAsync ? (err) => {
-                    setTimeout(() => observerOrNext.error(err));
-                } : (err) => {
-                    observerOrNext.error(err);
-                };
+            const observer = observerOrNext;
+            nextFn = (_a = observer.next) === null || _a === void 0 ? void 0 : _a.bind(observer);
+            errorFn = (_b = observer.error) === null || _b === void 0 ? void 0 : _b.bind(observer);
+            completeFn = (_c = observer.complete) === null || _c === void 0 ? void 0 : _c.bind(observer);
+        }
+        if (this.__isAsync) {
+            errorFn = _wrapInTimeout(errorFn);
+            if (nextFn) {
+                nextFn = _wrapInTimeout(nextFn);
             }
-            if (observerOrNext.complete) {
-                completeFn = this.__isAsync ? () => {
-                    setTimeout(() => observerOrNext.complete());
-                } : () => {
-                    observerOrNext.complete();
-                };
+            if (completeFn) {
+                completeFn = _wrapInTimeout(completeFn);
             }
         }
-        else {
-            schedulerFn = this.__isAsync ? (value) => {
-                setTimeout(() => observerOrNext(value));
-            } : (value) => {
-                observerOrNext(value);
-            };
-            if (error) {
-                errorFn = this.__isAsync ? (err) => {
-                    setTimeout(() => error(err));
-                } : (err) => {
-                    error(err);
-                };
-            }
-            if (complete) {
-                completeFn = this.__isAsync ? () => {
-                    setTimeout(() => complete());
-                } : () => {
-                    complete();
-                };
-            }
-        }
-        const sink = super.subscribe(schedulerFn, errorFn, completeFn);
+        const sink = super.subscribe({ next: nextFn, error: errorFn, complete: completeFn });
         if (observerOrNext instanceof rxjs__WEBPACK_IMPORTED_MODULE_0__["Subscription"]) {
             observerOrNext.add(sink);
         }
         return sink;
     }
+}
+function _wrapInTimeout(fn) {
+    return (value) => {
+        setTimeout(fn, undefined, value);
+    };
 }
 /**
  * @publicApi
@@ -40844,9 +40823,11 @@ class DebugRenderer2 {
     }
     destroyNode(node) {
         const debugNode = getDebugNode$1(node);
-        removeDebugNodeFromIndex(debugNode);
-        if (debugNode instanceof DebugNode__PRE_R3__) {
-            debugNode.listeners.length = 0;
+        if (debugNode) {
+            removeDebugNodeFromIndex(debugNode);
+            if (debugNode instanceof DebugNode__PRE_R3__) {
+                debugNode.listeners.length = 0;
+            }
         }
         if (this.delegate.destroyNode) {
             this.delegate.destroyNode(node);
@@ -43421,7 +43402,7 @@ class CountSubscriber extends _Subscriber__WEBPACK_IMPORTED_MODULE_0__["Subscrib
 /*!********************************************************!*\
   !*** ./node_modules/@angular/cdk/fesm2015/keycodes.js ***!
   \********************************************************/
-/*! exports provided: A, ALT, APOSTROPHE, AT_SIGN, B, BACKSLASH, BACKSPACE, C, CAPS_LOCK, CLOSE_SQUARE_BRACKET, COMMA, CONTEXT_MENU, CONTROL, D, DASH, DELETE, DOWN_ARROW, E, EIGHT, END, ENTER, EQUALS, ESCAPE, F, F1, F10, F11, F12, F2, F3, F4, F5, F6, F7, F8, F9, FF_EQUALS, FF_MINUS, FF_MUTE, FF_SEMICOLON, FF_VOLUME_DOWN, FF_VOLUME_UP, FIRST_MEDIA, FIVE, FOUR, G, H, HOME, I, INSERT, J, K, L, LAST_MEDIA, LEFT_ARROW, M, MAC_ENTER, MAC_META, MAC_WK_CMD_LEFT, MAC_WK_CMD_RIGHT, META, MUTE, N, NINE, NUMPAD_DIVIDE, NUMPAD_EIGHT, NUMPAD_FIVE, NUMPAD_FOUR, NUMPAD_MINUS, NUMPAD_MULTIPLY, NUMPAD_NINE, NUMPAD_ONE, NUMPAD_PERIOD, NUMPAD_PLUS, NUMPAD_SEVEN, NUMPAD_SIX, NUMPAD_THREE, NUMPAD_TWO, NUMPAD_ZERO, NUM_CENTER, NUM_LOCK, O, ONE, OPEN_SQUARE_BRACKET, P, PAGE_DOWN, PAGE_UP, PAUSE, PLUS_SIGN, PRINT_SCREEN, Q, QUESTION_MARK, R, RIGHT_ARROW, S, SCROLL_LOCK, SEMICOLON, SEVEN, SHIFT, SINGLE_QUOTE, SIX, SLASH, SPACE, T, TAB, THREE, TILDE, TWO, U, UP_ARROW, V, VOLUME_DOWN, VOLUME_UP, W, X, Y, Z, ZERO, hasModifierKey */
+/*! exports provided: A, ALT, APOSTROPHE, AT_SIGN, B, BACKSLASH, BACKSPACE, C, CAPS_LOCK, CLOSE_SQUARE_BRACKET, COMMA, CONTEXT_MENU, CONTROL, D, DASH, DELETE, DOWN_ARROW, E, EIGHT, END, ENTER, EQUALS, ESCAPE, F, F1, F10, F11, F12, F2, F3, F4, F5, F6, F7, F8, F9, FF_EQUALS, FF_MINUS, FF_MUTE, FF_SEMICOLON, FF_VOLUME_DOWN, FF_VOLUME_UP, FIRST_MEDIA, FIVE, FOUR, G, H, HOME, I, INSERT, J, K, L, LAST_MEDIA, LEFT_ARROW, M, MAC_ENTER, MAC_META, MAC_WK_CMD_LEFT, MAC_WK_CMD_RIGHT, META, MUTE, N, NINE, NUMPAD_DIVIDE, NUMPAD_EIGHT, NUMPAD_FIVE, NUMPAD_FOUR, NUMPAD_MINUS, NUMPAD_MULTIPLY, NUMPAD_NINE, NUMPAD_ONE, NUMPAD_PERIOD, NUMPAD_PLUS, NUMPAD_SEVEN, NUMPAD_SIX, NUMPAD_THREE, NUMPAD_TWO, NUMPAD_ZERO, NUM_CENTER, NUM_LOCK, O, ONE, OPEN_SQUARE_BRACKET, P, PAGE_DOWN, PAGE_UP, PAUSE, PERIOD, PLUS_SIGN, PRINT_SCREEN, Q, QUESTION_MARK, R, RIGHT_ARROW, S, SCROLL_LOCK, SEMICOLON, SEVEN, SHIFT, SINGLE_QUOTE, SIX, SLASH, SPACE, T, TAB, THREE, TILDE, TWO, U, UP_ARROW, V, VOLUME_DOWN, VOLUME_UP, W, X, Y, Z, ZERO, hasModifierKey */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43514,6 +43495,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PAGE_DOWN", function() { return PAGE_DOWN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PAGE_UP", function() { return PAGE_UP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PAUSE", function() { return PAUSE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PERIOD", function() { return PERIOD; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PLUS_SIGN", function() { return PLUS_SIGN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PRINT_SCREEN", function() { return PRINT_SCREEN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return Q; });
@@ -43662,6 +43644,7 @@ const SEMICOLON = 186; // Firefox (Gecko) fires 59 for SEMICOLON
 const EQUALS = 187; // Firefox (Gecko) fires 61 for EQUALS
 const COMMA = 188;
 const DASH = 189; // Firefox (Gecko) fires 173 for DASH/MINUS
+const PERIOD = 190;
 const SLASH = 191;
 const APOSTROPHE = 192;
 const TILDE = 192;
@@ -43792,7 +43775,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "SVse");
 /**
- * @license Angular v11.2.9
+ * @license Angular v11.2.10
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -48136,7 +48119,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵsetRootDomAdapter", function() { return setRootDomAdapter; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "8Y7J");
 /**
- * @license Angular v11.2.9
+ * @license Angular v11.2.10
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -53430,7 +53413,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('11.2.9');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('11.2.10');
 
 /**
  * @license
@@ -57814,7 +57797,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ɵgetDOM", function() { return _angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵgetDOM"]; });
 
 /**
- * @license Angular v11.2.9
+ * @license Angular v11.2.10
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -59968,7 +59951,7 @@ function elementMatches(n, selector) {
 /**
  * @publicApi
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('11.2.9');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('11.2.10');
 
 /**
  * @license
@@ -60753,7 +60736,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /**
- * @license Angular v11.2.9
+ * @license Angular v11.2.10
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -62826,6 +62809,11 @@ class ActivateRoutes {
             context.outlet.deactivate();
             // Destroy the contexts for all the outlets that were in the component
             context.children.onOutletDeactivated();
+            // Clear the information about the attached component on the context but keep the reference to
+            // the outlet.
+            context.attachRef = null;
+            context.resolver = null;
+            context.route = null;
         }
     }
     activateChildRoutes(futureNode, currNode, contexts) {
@@ -65252,7 +65240,6 @@ class Router {
             this.events
                 .next(new NavigationEnd(t.id, this.serializeUrl(t.extractedUrl), this.serializeUrl(this.currentUrlTree)));
             this.lastSuccessfulNavigation = this.currentNavigation;
-            this.currentNavigation = null;
             t.resolve(true);
         }, e => {
             this.console.warn(`Unhandled Navigation Error: `);
@@ -66688,7 +66675,7 @@ function provideRouterInitializer() {
 /**
  * @publicApi
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('11.2.9');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('11.2.10');
 
 /**
  * @license
@@ -69076,7 +69063,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /**
- * @license Angular v11.2.9
+ * @license Angular v11.2.10
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -76242,7 +76229,7 @@ FormBuilder.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
 /**
  * @publicApi
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('11.2.9');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('11.2.10');
 
 /**
  * @license
